@@ -4,7 +4,7 @@ date: 2017-07-21 16:35:40
 tags:
 ---
 # 二分查找法
-`
+{%codeblock lang: javascript%}
 	function binarysearch(arr, target) {
 	if(arr.length == 0) {
 		return 0;
@@ -24,19 +24,20 @@ tags:
 	}
 	return 0;
 }
-
+{%endcodeblock%}
 # 冒泡排序法
-`
+{%codeblock lang: javascript%}
 /*
 	从底层开始冒泡，两两比较，小的放在前面，直到小泡泡
 */
+
 function BubbleSort(arr) {
 	if (arr.length == 0) {
 		return 0;
 	}
 	let temp = 0;
 	for(let i = 0; i < arr.length - 1; i++) { // i是顶层的泡泡，标记最小的值
-		for(let j = arr.length - 2; j >= i; j--) { 
+		for(let j = arr.length - 2; j >= i; j--) {
 			if(arr[j] > arr[j+1]) {
 				temp = arr[j];
 				arr[j] = arr[j+1];
@@ -46,9 +47,9 @@ function BubbleSort(arr) {
 	}
 	return arr;
 }
- `
+{%endcodeblock%}
 # 插入排序法
- `
+{%codeblock lang: javascript%}
  /*
 	1.默认第一个已经排好序
 	2.依次将接下来的数与数组里的每个元素进行比较，若比前一个小
@@ -72,4 +73,4 @@ function BubbleSort(arr) {
       }
       return arr;
    }
-   `
+{%endcodeblock%}
