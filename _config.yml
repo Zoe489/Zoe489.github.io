@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 乖乖小左
 subtitle:
 description:
 author: Zoe
@@ -77,6 +77,7 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repo:https://github.com/Zoe489/Zoe489.github.io.git
-  branch:master
+  type: git
+  repo: git@github.com:Zoe489/Zoe489.github.io.git
+  branch: master
+  message: test
