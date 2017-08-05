@@ -93,17 +93,19 @@
 
 
 
-<meta name="description" content="普通对象与函数对象  凡是通过new Function()创建的对象都是函数对象。">
+<meta name="description" content="普通对象与函数对象   凡是通过new Function()创建的对象都是函数对象，其他的都是普通对象。 构造函数   实例的属性（constructor）指向构造函数。 原型对象   函数对象(构造函数)都有prototype属性，指向函数的原型对象。每个对象都有__proto__属性，但只有函数对象才有prototype。  在默认情况下，所有的原型对象都会自动获得一个constructor（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-原型链">
 <meta property="og:url" content="http://zoe489.github.io/2017/08/05/javascript-Prototype/index.html">
 <meta property="og:site_name" content="乖乖小左">
-<meta property="og:description" content="普通对象与函数对象  凡是通过new Function()创建的对象都是函数对象。">
+<meta property="og:description" content="普通对象与函数对象   凡是通过new Function()创建的对象都是函数对象，其他的都是普通对象。 构造函数   实例的属性（constructor）指向构造函数。 原型对象   函数对象(构造函数)都有prototype属性，指向函数的原型对象。每个对象都有__proto__属性，但只有函数对象才有prototype。  在默认情况下，所有的原型对象都会自动获得一个constructor（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-05T04:39:09.025Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20161006191631510?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2017-08-05T11:36:01.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-原型链">
-<meta name="twitter:description" content="普通对象与函数对象  凡是通过new Function()创建的对象都是函数对象。">
+<meta name="twitter:description" content="普通对象与函数对象   凡是通过new Function()创建的对象都是函数对象，其他的都是普通对象。 构造函数   实例的属性（constructor）指向构造函数。 原型对象   函数对象(构造函数)都有prototype属性，指向函数的原型对象。每个对象都有__proto__属性，但只有函数对象才有prototype。  在默认情况下，所有的原型对象都会自动获得一个constructor（">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161006191631510?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
 
 
@@ -357,7 +359,34 @@
       
 
       
-        <h1 id="普通对象与函数对象"><a href="#普通对象与函数对象" class="headerlink" title="普通对象与函数对象"></a>普通对象与函数对象</h1><p>  凡是通过new Function()创建的对象都是函数对象。</p>
+        <h1 id="普通对象与函数对象"><a href="#普通对象与函数对象" class="headerlink" title="普通对象与函数对象"></a>普通对象与函数对象</h1><hr>
+<p>  凡是通过new Function()创建的对象都是函数对象，其他的都是普通对象。</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><hr>
+<p>  实例的属性（constructor）指向构造函数。</p>
+<h1 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h1><hr>
+<p>  函数对象(构造函数)都有prototype属性，指向函数的原型对象。<br><em>每个对象都有__proto__属性，但只有函数对象才有prototype。</em></p>
+<blockquote>
+<p>在默认情况下，所有的原型对象都会自动获得一个constructor（构造函数）属性，这个属性指向prototype属性所在的函数（Person）</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Person.prototype.constructor == Person;</div><div class="line">person1.constructor == Person;</div></pre></td></tr></table></figure>
+<p><em>原型对象（Person.prototype）是构造函数（Person）的一个实例。</em><br>原型对象是用来继承的。</p>
+<h1 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a>__proto__</h1><hr>
+<p><em>对象都有__proto__的内置属性，指向创建它的构造函数的原型对象。</em><br><strong>person1.__proto__== Person.protoype</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">b.constructor === <span class="built_in">Array</span>;</div><div class="line">b.__proto__ === <span class="built_in">Array</span>.prototype;</div><div class="line"></div><div class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">c.constructor === <span class="built_in">Date</span>;</div><div class="line">c.__proto__ === <span class="built_in">Date</span>.prototype;</div><div class="line"></div><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Function</span>();</div><div class="line">d.constructor === <span class="built_in">Function</span>;</div><div class="line">d.__proto__ === <span class="built_in">Function</span>.prototype;</div></pre></td></tr></table></figure></p>
+<p><strong>所有函数对象的__proto__都指向Function.prototype，它是一个空函数。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>.__proto__ === <span class="built_in">Function</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">Number</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">Boolean</span>.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line"><span class="built_in">Boolean</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">String</span>.__proto__ === <span class="built_in">Function</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">String</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="comment">// 所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身</span></div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">Object</span>.constructor == <span class="built_in">Function</span> <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身</span></div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">// true</span></div><div class="line"><span class="built_in">Function</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.__proto__ === <span class="built_in">Function</span>.prototype   <span class="comment">// true</span></div><div class="line"><span class="built_in">Array</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">RegExp</span>.__proto__ === <span class="built_in">Function</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">RegExp</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">Error</span>.__proto__ === <span class="built_in">Function</span>.prototype   <span class="comment">// true</span></div><div class="line"><span class="built_in">Error</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">Date</span>.__proto__ === <span class="built_in">Function</span>.prototype    <span class="comment">// true</span></div><div class="line"><span class="built_in">Date</span>.constructor == <span class="built_in">Function</span> <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>Math和JSON无需new<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.__proto__ === <span class="built_in">Object</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">Math</span>.construrctor == <span class="built_in">Object</span> <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="built_in">JSON</span>.__proto__ === <span class="built_in">Object</span>.prototype  <span class="comment">// true</span></div><div class="line"><span class="built_in">JSON</span>.construrctor == <span class="built_in">Object</span> <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>所有的构造器都来自于Function.prototype，甚至包括根构造器Object及Function自身。所有构造器都继承了Function.prototype的属性及方法。如length、call、apply、bind。<br><strong>Function.prototype是唯一一个typeof XXX.prototye为function的prototype，其它的构造器的prototype都是object</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<h1 id="原型链的基本思路"><a href="#原型链的基本思路" class="headerlink" title="原型链的基本思路"></a>原型链的基本思路</h1><hr>
+<p>利用原型让引用类型继承另一个引用类型的属性和方法。<br>每隔构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针（construrctor），而实例对象都包含一个指向源性对象的内部指针(__proto__)，如果让原型对象等于另一个类型的实例，此时的原型对象将包含另一个原型的指针(__proto__)，另一个原型也包含着一个指向另一个构造函数的指针（construrctor），构成了实例和原型的链条。<br>  <img src="http://img.blog.csdn.net/20161006191631510?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt text"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><hr>
+<ol>
+<li>所有函数对象的__proto__都指向Function.prototype，是一个空函数。</li>
+<li>所有对象的__proto__都指向其构造函数的prototype。</li>
+<li>每个对象都有construrctor属性，指向构造函数。</li>
+<li>person1.__proto__==Person.protype==person1.construrctor.prototype</li>
+<li>Object.prototype.__proto__ == null</li>
+<li><strong>原型链存在于实例和构造函数的原型对象之间，即 person1.__proto__ == Person.prototype</strong></li>
+</ol>
+<p>本文借鉴了<br>[<a href="http://www.jianshu.com/p/dee9f8b14771]，" target="_blank" rel="external">http://www.jianshu.com/p/dee9f8b14771]，</a><br><a href="http://blog.csdn.net/sinat_21274091/article/details/52741788" target="_blank" rel="external">http://blog.csdn.net/sinat_21274091/article/details/52741788</a></p>
 
       
     </div>
@@ -403,6 +432,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/05/javascript-Inherit/" rel="prev" title="javascript-继承">
+                javascript-继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -523,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#普通对象与函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象与函数对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#普通对象与函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象与函数对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象"><span class="nav-number">3.</span> <span class="nav-text">原型对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#proto"><span class="nav-number">4.</span> <span class="nav-text">__proto__</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链的基本思路"><span class="nav-number">5.</span> <span class="nav-text">原型链的基本思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
