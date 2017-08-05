@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="二分查找法lang: javascript12345678910111213141516171819	function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= h">
+<meta name="description" content="二分查找法12345678910111213141516171819function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= high) &amp;#123;		mid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法">
+<meta property="og:title" content="排序算法(javascript)">
 <meta property="og:url" content="http://zoe489.github.io/2017/07/21/Sort-Function/index.html">
 <meta property="og:site_name" content="乖乖小左">
-<meta property="og:description" content="二分查找法lang: javascript12345678910111213141516171819	function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= h">
+<meta property="og:description" content="二分查找法12345678910111213141516171819function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= high) &amp;#123;		mid">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-21T13:23:37.521Z">
+<meta property="og:updated_time" content="2017-08-04T13:58:45.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法">
-<meta name="twitter:description" content="二分查找法lang: javascript12345678910111213141516171819	function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= h">
+<meta name="twitter:title" content="排序算法(javascript)">
+<meta name="twitter:description" content="二分查找法12345678910111213141516171819function binarysearch(arr, target) &amp;#123;	if(arr.length == 0) &amp;#123;		return 0;	&amp;#125;	let low = 0;	let high = arr.length;	let mid;	while(low &amp;lt;= high) &amp;#123;		mid">
 
 
 
@@ -142,7 +142,7 @@
 <script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
   <script>AV.initialize("azd3MtE93vNCtJJpQXYsEXTB-gzGzoHsz", "N9oQAax1I8du1oHafLrYCUpc");</script>
 
-  <title>排序算法 | 乖乖小左</title>
+  <title>排序算法(javascript) | 乖乖小左</title>
   
 
 
@@ -288,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法</h1>
+          <h1 class="post-title" itemprop="name headline">排序算法(javascript)</h1>
         
 
         <div class="post-meta">
@@ -357,9 +357,53 @@
       
 
       
-        <h1 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h1><figure class="highlight vbscript"><figcaption><span>lang: javascript</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">	<span class="keyword">function</span> binarysearch(arr, target) &#123;</div><div class="line">	<span class="keyword">if</span>(arr.length == <span class="number">0</span>) &#123;</div><div class="line">		return <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">let</span> low = <span class="number">0</span>;</div><div class="line">	<span class="keyword">let</span> high = arr.length;</div><div class="line">	<span class="keyword">let</span> <span class="built_in">mid</span>;</div><div class="line">	<span class="keyword">while</span>(low &lt;= high) &#123;</div><div class="line">		<span class="built_in">mid</span> = Math.floor((high-low)/<span class="number">2</span>);</div><div class="line">		<span class="keyword">if</span>(target == arr[<span class="built_in">mid</span>]) &#123;</div><div class="line">			return <span class="built_in">mid</span>;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; arr[<span class="built_in">mid</span>]) &#123;</div><div class="line">			high = <span class="built_in">mid</span> - <span class="number">1</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			low = <span class="built_in">mid</span> + <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h1><figure class="highlight mipsasm"><figcaption><span>lang: javascript</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">	从底层开始冒泡，两两比较，小的放在前面，直到小泡泡</div><div class="line">*/</div><div class="line"></div><div class="line">function <span class="keyword">BubbleSort(arr) </span>&#123;</div><div class="line">	if (arr.length == <span class="number">0</span>) &#123;</div><div class="line">		return <span class="number">0</span><span class="comment">;</span></div><div class="line">	&#125;</div><div class="line">	let temp = <span class="number">0</span><span class="comment">;</span></div><div class="line">	for(let i = <span class="number">0</span><span class="comment">; i &lt; arr.length - 1; i++) &#123; // i是顶层的泡泡，标记最小的值</span></div><div class="line">		for(let <span class="keyword">j </span>= arr.length - <span class="number">2</span><span class="comment">; j &gt;= i; j--) &#123;</span></div><div class="line">			if(arr[<span class="keyword">j] </span>&gt; arr[<span class="keyword">j+1]) </span>&#123;</div><div class="line">				temp = arr[<span class="keyword">j];</span></div><div class="line">				arr[<span class="keyword">j] </span>= arr[<span class="keyword">j+1];</span></div><div class="line">				arr[<span class="keyword">j+1] </span>= temp<span class="comment">;</span></div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return arr<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="插入排序法"><a href="#插入排序法" class="headerlink" title="插入排序法"></a>插入排序法</h1><figure class="highlight javascript"><figcaption><span>lang: javascript</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">1.默认第一个已经排好序</div><div class="line">2.依次将接下来的数与数组里的每个元素进行比较，若比前一个小</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">InsertSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">   	<span class="keyword">if</span> (arr.length == <span class="number">0</span>) &#123;</div><div class="line">   	  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">   	&#125;</div><div class="line">     <span class="keyword">let</span> temp = <span class="number">0</span>;   <span class="comment">// 存放当前元素</span></div><div class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</div><div class="line">       <span class="keyword">if</span>(arr[i] &lt; arr[i<span class="number">-1</span>]) &#123;</div><div class="line">         temp = arr[i];</div><div class="line">         <span class="keyword">let</span> pre = i - <span class="number">1</span>;</div><div class="line"></div><div class="line">         <span class="keyword">while</span>(pre &gt;= <span class="number">0</span> &amp;&amp; temp &lt; arr[pre]) &#123;</div><div class="line">           arr[pre+<span class="number">1</span>] = arr[pre];</div><div class="line">           pre--;</div><div class="line">         &#125;</div><div class="line">         arr[pre+<span class="number">1</span>] = temp;</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> arr;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+        <h1 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarysearch</span>(<span class="params">arr, target</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(arr.length == <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">let</span> low = <span class="number">0</span>;</div><div class="line">	<span class="keyword">let</span> high = arr.length;</div><div class="line">	<span class="keyword">let</span> mid;</div><div class="line">	<span class="keyword">while</span>(low &lt;= high) &#123;</div><div class="line">		mid = <span class="built_in">Math</span>.floor((high-low)/<span class="number">2</span>);</div><div class="line">		<span class="keyword">if</span>(target == arr[mid]) &#123;</div><div class="line">			<span class="keyword">return</span> mid;</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; arr[mid]) &#123;</div><div class="line">			high = mid - <span class="number">1</span>;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			low = mid + <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">	从底层开始冒泡，两两比较，小的放在前面，直到小泡泡</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">BubbleSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (arr.length == <span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">let</span> temp = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123; <span class="comment">// i是顶层的泡泡，标记最小的值</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j = arr.length - <span class="number">2</span>; j &gt;= i; j--) &#123;</div><div class="line">			<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;</div><div class="line">				temp = arr[j];</div><div class="line">				arr[j] = arr[j+<span class="number">1</span>];</div><div class="line">				arr[j+<span class="number">1</span>] = temp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="插入排序法"><a href="#插入排序法" class="headerlink" title="插入排序法"></a>插入排序法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">1.默认第一个已经排好序</div><div class="line">2.依次将接下来的数与数组里的每个元素进行比较，若比前一个小</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">InsertSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line"> 	<span class="keyword">if</span> (arr.length == <span class="number">0</span>) &#123;</div><div class="line"> 	  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"> 	&#125;</div><div class="line">   <span class="keyword">let</span> temp = <span class="number">0</span>;   <span class="comment">// 存放当前元素</span></div><div class="line">   <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</div><div class="line">     <span class="keyword">if</span>(arr[i] &lt; arr[i<span class="number">-1</span>]) &#123;</div><div class="line">       temp = arr[i];</div><div class="line">       <span class="keyword">let</span> pre = i - <span class="number">1</span>;</div><div class="line"></div><div class="line">       <span class="keyword">while</span>(pre &gt;= <span class="number">0</span> &amp;&amp; temp &lt; arr[pre]) &#123;</div><div class="line">         arr[pre+<span class="number">1</span>] = arr[pre];</div><div class="line">         pre--;</div><div class="line">       &#125;</div><div class="line">       arr[pre+<span class="number">1</span>] = temp;</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p><strong>基本思想</strong>: 通过一趟排序将待排记录分割成独立的两部分，其中一部分记录的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序的目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* 它是由冒泡排序改进而来的。在待排序的n个记录中任取一个记录，把该记录放在合适的位置后，</div><div class="line">* 数据序列被此记录划分为两部分。所有关键字比该记录关键字小的记录放在前一部分，所有比它大的记录放置在后一部分，并把该记录排在这两部分的中间。</div><div class="line">*/</div><div class="line">	<span class="comment">//交换函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,i,j</span>) </span>&#123;</div><div class="line">	<span class="keyword">const</span> temp = arr[i];</div><div class="line">	arr[i] = arr[j];</div><div class="line">	arr[j] = temp;</div><div class="line">&#125;</div><div class="line"><span class="comment">//分区函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr, left , right</span>) </span>&#123;</div><div class="line">	<span class="keyword">let</span> pivot = left; <span class="comment">//基准</span></div><div class="line">	<span class="keyword">let</span> index = pivot + <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = index; i&lt;=right;i++) &#123;</div><div class="line">		<span class="keyword">if</span>(arr[i]&lt;arr[pivot]) &#123;</div><div class="line">			swap(arr, i, index);</div><div class="line">			index++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	swap(arr,pivot,index<span class="number">-1</span>);</div><div class="line">	<span class="keyword">return</span> index<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 快速排序算法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr, left, right</span>) </span>&#123;</div><div class="line">	<span class="keyword">const</span> len = arr.length;</div><div class="line">	<span class="keyword">let</span> partitionIndex = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(left&lt;right) &#123;</div><div class="line">		partitionIndex = partition(arr, left, right);</div><div class="line">		quickSort(arr, left, partitionIndex<span class="number">-1</span>);</div><div class="line">		quickSort(arr, partitionIndex+<span class="number">1</span>,right);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p><strong>思想</strong>：两两进行比较，再归并。<br>    归并排序的性能不受输入数据的影响，始终是O(nlogn)，代价是需要额外空间。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">	<span class="keyword">const</span> len = arr.length;</div><div class="line">	<span class="keyword">if</span>(len&lt;<span class="number">2</span>) &#123;</div><div class="line">		<span class="keyword">return</span> arr;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">let</span> middle = <span class="built_in">Math</span>.floor(len/<span class="number">2</span>);</div><div class="line">	<span class="keyword">let</span> left = arr.slice(<span class="number">0</span>,middle);</div><div class="line">	<span class="keyword">let</span> right = arr.slice(middle);</div><div class="line">	<span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left,right</span>) </span>&#123;</div><div class="line">	<span class="keyword">let</span> result = []</div><div class="line">	<span class="keyword">while</span>(left.length&gt;<span class="number">0</span> &amp;&amp; right.length&gt;<span class="number">0</span>) &#123;</div><div class="line">		<span class="keyword">if</span>(left[<span class="number">0</span>] &lt; right[<span class="number">0</span>]) &#123;</div><div class="line">			result.push(left.shift());</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			result.push(right.shift());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span> (left.length) &#123;</div><div class="line">		result.push(left.shift());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(right.length) &#123;</div><div class="line">		result.push(right.shift());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><table>
+<thead>
+<tr>
+<th>排序方法</th>
+<th>平均情况</th>
+<th>最好情况</th>
+<th>最坏情况</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>直接插入排序</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>不稳定</td>
+</tr>
+</tbody>
+</table>
+<p>可参考<a href="http://www.cnblogs.com/dushao/p/6004883.html" target="_blank" rel="external">http://www.cnblogs.com/dushao/p/6004883.html</a></p>
 
       
     </div>
@@ -392,6 +436,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/02/Data_Structure/" rel="prev" title="数据结构(javascrit)">
+                数据结构(javascrit) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -461,7 +521,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -472,7 +532,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -509,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找法"><span class="nav-number">1.</span> <span class="nav-text">二分查找法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序法"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序法"><span class="nav-number">3.</span> <span class="nav-text">插入排序法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找法"><span class="nav-number">1.</span> <span class="nav-text">二分查找法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序法"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序法"><span class="nav-number">3.</span> <span class="nav-text">插入排序法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">4.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-number">5.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间复杂度"><span class="nav-number">6.</span> <span class="nav-text">时间复杂度</span></a></li></ol></div>
             
 
           </div>

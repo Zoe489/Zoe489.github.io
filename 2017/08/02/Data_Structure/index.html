@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="线性表1.线性表的定义  零个或多个数据元素的有限序列。 2.线性表的分类 线性表的顺序存储结构：指的是用一段地址连续的存储单元一次存储线性表的数据元素。 线性表的链式存储结构：地址不一定连续来存储线性表的数据元素。  3.线性表的操作3.1 顺序存储3.1.1 查找元素  时间复杂度O(1) 3.1.2 插入操作思路  如果插入位置不合理，抛出异常； 如果线性表长度大于等于数组长度，则抛出异常；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构(javascrit)">
+<meta property="og:url" content="http://zoe489.github.io/2017/08/02/Data_Structure/index.html">
+<meta property="og:site_name" content="乖乖小左">
+<meta property="og:description" content="线性表1.线性表的定义  零个或多个数据元素的有限序列。 2.线性表的分类 线性表的顺序存储结构：指的是用一段地址连续的存储单元一次存储线性表的数据元素。 线性表的链式存储结构：地址不一定连续来存储线性表的数据元素。  3.线性表的操作3.1 顺序存储3.1.1 查找元素  时间复杂度O(1) 3.1.2 插入操作思路  如果插入位置不合理，抛出异常； 如果线性表长度大于等于数组长度，则抛出异常；">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-04T14:17:14.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构(javascrit)">
+<meta name="twitter:description" content="线性表1.线性表的定义  零个或多个数据元素的有限序列。 2.线性表的分类 线性表的顺序存储结构：指的是用一段地址连续的存储单元一次存储线性表的数据元素。 线性表的链式存储结构：地址不一定连续来存储线性表的数据元素。  3.线性表的操作3.1 顺序存储3.1.1 查找元素  时间复杂度O(1) 3.1.2 插入操作思路  如果插入位置不合理，抛出异常； 如果线性表长度大于等于数组长度，则抛出异常；">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zoe489.github.io/2017/08/02/Data_Structure/"/>
+
+
+
+
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("azd3MtE93vNCtJJpQXYsEXTB-gzGzoHsz", "N9oQAax1I8du1oHafLrYCUpc");</script>
+
+  <title>数据结构(javascrit) | 乖乖小左</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">乖乖小左</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/02/Data_Structure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zoe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乖乖小左">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构(javascrit)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T22:00:40+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><h2 id="1-线性表的定义"><a href="#1-线性表的定义" class="headerlink" title="1.线性表的定义"></a>1.线性表的定义</h2><p>  零个或多个数据元素的有限序列。</p>
+<h2 id="2-线性表的分类"><a href="#2-线性表的分类" class="headerlink" title="2.线性表的分类"></a>2.线性表的分类</h2><ul>
+<li><strong>线性表的顺序存储结构</strong>：指的是用一段地址连续的存储单元一次存储线性表的数据元素。</li>
+<li><strong>线性表的链式存储结构</strong>：地址不一定连续来存储线性表的数据元素。</li>
+</ul>
+<h2 id="3-线性表的操作"><a href="#3-线性表的操作" class="headerlink" title="3.线性表的操作"></a>3.线性表的操作</h2><h3 id="3-1-顺序存储"><a href="#3-1-顺序存储" class="headerlink" title="3.1 顺序存储"></a>3.1 顺序存储</h3><h4 id="3-1-1-查找元素"><a href="#3-1-1-查找元素" class="headerlink" title="3.1.1 查找元素"></a>3.1.1 查找元素</h4><p>  时间复杂度O(1)</p>
+<h4 id="3-1-2-插入操作"><a href="#3-1-2-插入操作" class="headerlink" title="3.1.2 插入操作"></a>3.1.2 插入操作</h4><p><strong>思路</strong></p>
+<ul>
+<li>如果插入位置不合理，抛出异常；</li>
+<li>如果线性表长度大于等于数组长度，则抛出异常；</li>
+<li>从最后一个元素开始向前遍历到第i个位置，分别将它们都向后移动一个位置；</li>
+<li>将要插入元素填入位置i处；</li>
+<li>表长加1。<br>时间复杂度O(1).</li>
+</ul>
+<h4 id="3-1-3-删除操作"><a href="#3-1-3-删除操作" class="headerlink" title="3.1.3 删除操作"></a>3.1.3 删除操作</h4><p><strong>思路</strong></p>
+<ul>
+<li>如果删除位置不合理，抛出异常；</li>
+<li>取出删除元素；</li>
+<li>从删除元素的位置开始遍历到最后一个元素位置，分别将它们都向前移动一个位置；</li>
+<li>表长减1。<br>时间复杂度O(1).</li>
+</ul>
+<h3 id="3-2-链式存储"><a href="#3-2-链式存储" class="headerlink" title="3.2 链式存储"></a>3.2 链式存储</h3><h4 id="3-2-1-查找元素"><a href="#3-2-1-查找元素" class="headerlink" title="3.2.1 查找元素"></a>3.2.1 查找元素</h4><p><strong>思路</strong></p>
+<ul>
+<li>声明一个结点p指向链表第一个结点；</li>
+<li>遍历链表，指针p向后移动；</li>
+<li>若到链表结尾p为空，则说明第i个元素不存在；</li>
+<li>否则查找成果，返回p结点。<br>最好时间复杂度O(1),最坏时间复杂度O(n).</li>
+</ul>
+<h4 id="3-2-2-插入元素"><a href="#3-2-2-插入元素" class="headerlink" title="3.2.2 插入元素"></a>3.2.2 插入元素</h4><p>标准代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s.next = p.next;</div><div class="line">p.next = s;</div></pre></td></tr></table></figure></p>
+<h4 id="3-2-3-删除元素"><a href="#3-2-3-删除元素" class="headerlink" title="3.2.3 删除元素"></a>3.2.3 删除元素</h4><p>标准代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">q = p.next;</div><div class="line">p.next = q.next;</div></pre></td></tr></table></figure></p>
+<h2 id="4-单链表结构与顺序存储结构的优缺点"><a href="#4-单链表结构与顺序存储结构的优缺点" class="headerlink" title="4.单链表结构与顺序存储结构的优缺点"></a>4.单链表结构与顺序存储结构的优缺点</h2><h3 id="4-1-时间性能"><a href="#4-1-时间性能" class="headerlink" title="4.1 时间性能"></a>4.1 时间性能</h3><ul>
+<li>查找：顺序存储结构O(1),单链表O(n)</li>
+<li>插入和删除：顺序存储结构平均时间复杂度O(n),单链表O(1)</li>
+</ul>
+<h3 id="4-2-空间性能"><a href="#4-2-空间性能" class="headerlink" title="4.2 空间性能"></a>4.2 空间性能</h3><p>  顺序存储结构需要预分配存储空间。单链表不需要分配存储空间。</p>
+<h2 id="5-单链表的分类"><a href="#5-单链表的分类" class="headerlink" title="5.单链表的分类"></a>5.单链表的分类</h2><h3 id="5-1-静态链表"><a href="#5-1-静态链表" class="headerlink" title="5.1 静态链表"></a>5.1 静态链表</h3><p>  用数组描述的链表叫<strong>静态链表</strong>。</p>
+<h3 id="5-2-循环链表"><a href="#5-2-循环链表" class="headerlink" title="5.2 循环链表"></a>5.2 循环链表</h3><p>  将单链表中终端结点的指针由空指针改为指向头结点，头尾相连的单链表称为<strong>单循环链表</strong>。</p>
+<h3 id="5-3-双向链表"><a href="#5-3-双向链表" class="headerlink" title="5.3 双向链表"></a>5.3 双向链表</h3><p>  单循环链表增加一个指向前驱结点的指针。</p>
+<ul>
+<li><p>插入操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s.prior = p;</div><div class="line">s.next = p.next;</div><div class="line">p.next.prior = s;</div><div class="line">p.next = s;</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p.prior.next = p.next;</div><div class="line">p.next.prior = p.prior;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><ul>
+<li><strong>栈</strong>：限定仅在表尾进行插入和删除操作的线性表（后进先出）</li>
+<li><strong>队列</strong>：只允许在一端进行插入操作，而在另一端进行删除操作的线性表（先进先出）</li>
+</ul>
+<h2 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h2><h3 id="2-1-栈"><a href="#2-1-栈" class="headerlink" title="2.1 栈"></a>2.1 栈</h3><p>进栈push()<br>出栈pop()</p>
+<h2 id="3-分类"><a href="#3-分类" class="headerlink" title="3.分类"></a>3.分类</h2><h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p>队列满的条件是(rear+1)%QueueSize == front<br>队列长度公式是(rear-front+QueueSize)%QueueSize</p>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1.定义"></a>1.定义</h2><p><strong>树</strong>：是n个结点的有限集</p>
+<h2 id="2-相关概念"><a href="#2-相关概念" class="headerlink" title="2.相关概念"></a>2.相关概念</h2><p><strong>度</strong>：树的度是树内各结点的度的最大值。<br><strong>深度</strong>：树中结点的最大层次称为树的深度。</p>
+<h2 id="3-树的存储结构"><a href="#3-树的存储结构" class="headerlink" title="3.树的存储结构"></a>3.树的存储结构</h2><ol>
+<li>双亲表示法<br>data,parent</li>
+<li>孩子表示法<br>data,parent,firstchild-child,next</li>
+<li>孩子兄弟表示法<br>data,firstchild,rightsib</li>
+</ol>
+<h2 id="4-二叉树"><a href="#4-二叉树" class="headerlink" title="4.二叉树"></a>4.二叉树</h2><h3 id="4-1-特点"><a href="#4-1-特点" class="headerlink" title="4.1 特点"></a>4.1 特点</h3><ul>
+<li>每个结点最多有两颗子树</li>
+<li>左子树和右子树是有顺序的。</li>
+</ul>
+<h3 id="4-2-分类"><a href="#4-2-分类" class="headerlink" title="4.2 分类"></a>4.2 分类</h3><ol>
+<li>满二叉树<br>在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。</li>
+<li>完全二叉树<br>对一棵具有n个结点的二叉树按层序编号，如果编号为i的结点与同样深度的满二叉树中编号为i的结点在二叉树中位置完全相同，则这棵二叉树称为完全二叉树。</li>
+</ol>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><ol>
+<li>在二叉树的第i层至多有2<sup>i-1</sup>个结点。</li>
+<li>深度为k的二叉树至多有2<sup>k</sup>-1个结点。</li>
+<li>对任何一棵二叉树T，如果其终端结点数为n<sub>0</sub>,度为2的结点数为n<sub>2</sub>,则n<sub>0</sub>=n<sub>2</sub>+1。(n=n<sub>0</sub>+n<sub>1</sub>+n<sub>2</sub>,分支数总数等于结点总数减1，分支总数=n-1=n<sub>1</sub>+2n<sub>2</sub>)</li>
+<li>具有n个结点的完全二叉树的深度为[log<sub>2</sub>n]+1.</li>
+<li>如果对一棵有n个结点的完全二叉树的结点按层序编号，对任一结点i有：<br>1.如果i=1,则结点i是二叉树的根，无双亲；如果i&gt;1,则其双亲是结点[i/2].<br>2.如果2i&gt;n,则结点i无左孩子；否则其左孩子是结点2i。<br>3.如果2i+1&gt;n,则结点i无右孩子；否则其右孩子是结点2i+1。</li>
+</ol>
+<h3 id="4-3-二叉树的存储结构"><a href="#4-3-二叉树的存储结构" class="headerlink" title="4.3 二叉树的存储结构"></a>4.3 二叉树的存储结构</h3><p>二叉链表： lchild,data,rchild</p>
+<h3 id="4-4-基本操作"><a href="#4-4-基本操作" class="headerlink" title="4.4 基本操作"></a>4.4 基本操作</h3><h4 id="4-4-1-插入"><a href="#4-4-1-插入" class="headerlink" title="4.4.1 插入"></a>4.4.1 插入</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">  function TreeNode(x) &#123;</div><div class="line">    this.val = x;</div><div class="line">    this.left = null;</div><div class="line">    this.right = null;</div><div class="line">  &#125;</div><div class="line">  function BST() &#123;</div><div class="line">    this.root = null;</div><div class="line">    this.insert = insert;</div><div class="line">    this.inOrder = inOrder;</div><div class="line">&#125;</div><div class="line">*/</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">insert</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> node = <span class="keyword">new</span> TreeNode(data,<span class="literal">null</span>,<span class="literal">null</span>);</div><div class="line">    <span class="comment">//插入根结点</span></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.root == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">this</span>,root = n;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">let</span> current = <span class="keyword">this</span>.root;</div><div class="line">      <span class="keyword">let</span> parent;</div><div class="line">      <span class="keyword">while</span>(current) &#123;</div><div class="line">        parent = current;</div><div class="line">        <span class="keyword">if</span>(data&lt;current.data) &#123;</div><div class="line">          current = current.left;</div><div class="line">          <span class="keyword">if</span>(current == <span class="literal">null</span>) &#123;</div><div class="line">            parent.left = node;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">          &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          current = current.right;</div><div class="line">          <span class="keyword">if</span>(current == <span class="literal">null</span>) &#123;</div><div class="line">            parent.right = node;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h4 id="4-4-2-查找最小值（最大值）"><a href="#4-4-2-查找最小值（最大值）" class="headerlink" title="4.4.2 查找最小值（最大值）"></a>4.4.2 查找最小值（最大值）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMin</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> current = <span class="keyword">this</span>.root;</div><div class="line">  <span class="keyword">while</span>(!(current.left == <span class="literal">null</span>)) &#123;</div><div class="line">    current = current.left;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> current.data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-4-3-查找指定值"><a href="#4-4-3-查找指定值" class="headerlink" title="4.4.3 查找指定值"></a>4.4.3 查找指定值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> current = <span class="keyword">this</span>.root;</div><div class="line">  <span class="keyword">while</span>(current != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">if</span>(current.data == data) &#123;</div><div class="line">      <span class="keyword">return</span> current;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data&lt; current.data) &#123;</div><div class="line">      current = current.left;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      current = current.right;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-4-4-删除结点"><a href="#4-4-4-删除结点" class="headerlink" title="4.4.4 删除结点"></a>4.4.4 删除结点</h4><p>  删除结点有三种情况：</p>
+<ul>
+<li>叶子结点，则父结点指向null</li>
+<li>仅有左或右子树的结点，则原本指向它的结点就指向它的子结点</li>
+<li>左右子树都有结点，则查找删除结点右结点上的最小值，将临时结点上的值复制到待删除结点，然后再删除临时结点。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">remove</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">  root = removeNode(<span class="keyword">this</span>.root,data);</div><div class="line">&#125;</div><div class="line"><span class="comment">//找到最小值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMin</span>(<span class="params">node</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (node.left == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> node;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> getMin(node.left);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeNode</span>(<span class="params">node,data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(node == <span class="literal">null</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>(data == node.data) &#123;</div><div class="line">    <span class="comment">// 叶子结点</span></div><div class="line">    <span class="keyword">if</span>(node.left == <span class="literal">null</span> &amp;&amp; node.right ==<span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//没有左子结点的结点</span></div><div class="line">    <span class="keyword">if</span>(node.left == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> node.right;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(node.right == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> node.left;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 有2个子结点的结点</span></div><div class="line">    <span class="keyword">let</span> tempNode = getMin(node.right);</div><div class="line">    node.data = tempNode.data;</div><div class="line">    node.right = removeNode(node.right,tempNode.data);</div><div class="line">    <span class="keyword">return</span> node;</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data&lt;node.data) &#123;</div><div class="line">    node.left = removeNode(node.left,data);</div><div class="line">    <span class="keyword">return</span> node;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    node.right = removeNode(node.right,data);</div><div class="line">    <span class="keyword">return</span> node;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-5-二叉树的遍历"><a href="#4-5-二叉树的遍历" class="headerlink" title="4.5 二叉树的遍历"></a>4.5 二叉树的遍历</h3><h4 id="4-5-1-前序遍历"><a href="#4-5-1-前序遍历" class="headerlink" title="4.5.1 前序遍历"></a>4.5.1 前序遍历</h4><p>  先访问根结点，然后前序遍历左子树，再前序遍历右子树。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">  function TreeNode(x) &#123;</div><div class="line">    this.val = x;</div><div class="line">    this.left = null;</div><div class="line">    this.right = null;</div><div class="line">  &#125;</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PreOrderTraverse</span>(<span class="params">node</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(node == <span class="literal">null</span>)) &#123;</div><div class="line">    <span class="built_in">console</span>.log(node.data);</div><div class="line">    PreOrderTraverse(node.left);</div><div class="line">    PreOrderTraverse(node.right);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="4-5-2-中序遍历"><a href="#4-5-2-中序遍历" class="headerlink" title="4.5.2 中序遍历"></a>4.5.2 中序遍历</h4><p>  先中序遍历左子树，访问根结点，再中序遍历右子树。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">  function TreeNode(x) &#123;</div><div class="line">    this.val = x;</div><div class="line">    this.left = null;</div><div class="line">    this.right = null;</div><div class="line">  &#125;</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">InOrderTraverse</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(node == <span class="literal">null</span>)) &#123;</div><div class="line">          InOrderTraverse(node.left);</div><div class="line">          <span class="built_in">console</span>.log(node.show());</div><div class="line">          InOrderTraverse(node.right);</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="4-5-3-后序遍历"><a href="#4-5-3-后序遍历" class="headerlink" title="4.5.3 后序遍历"></a>4.5.3 后序遍历</h4><p>  先后序遍历左右子树，再访问根结点。<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">  function TreeNode(x) &#123;</div><div class="line">    this.val = x;</div><div class="line">    this.left = null;</div><div class="line">    this.right = null;</div><div class="line">  &#125;</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PostOrderTraverse</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!(node == <span class="literal">null</span>)) &#123;</div><div class="line">          PostOrderTraverse(node.left);</div><div class="line">          <span class="built_in">console</span>.log(node.show());</div><div class="line">          PostOrderTraverse(node.right);</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="4-5-4-层序遍历"><a href="#4-5-4-层序遍历" class="headerlink" title="4.5.4 层序遍历"></a>4.5.4 层序遍历</h4><p>  从根结点开始访问，从上而下逐层遍历。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/21/Sort-Function/" rel="next" title="排序算法(javascript)">
+                <i class="fa fa-chevron-left"></i> 排序算法(javascript)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/04/JavaScript-Closure/" rel="prev" title="javascript-闭包">
+                javascript-闭包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zoe" />
+          <p class="site-author-name" itemprop="name">Zoe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表"><span class="nav-number">1.</span> <span class="nav-text">线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-线性表的定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.线性表的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-线性表的分类"><span class="nav-number">1.2.</span> <span class="nav-text">2.线性表的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-线性表的操作"><span class="nav-number">1.3.</span> <span class="nav-text">3.线性表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-顺序存储"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 顺序存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-查找元素"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">3.1.1 查找元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-插入操作"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">3.1.2 插入操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-删除操作"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">3.1.3 删除操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-链式存储"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 链式存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-查找元素"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">3.2.1 查找元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-插入元素"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">3.2.2 插入元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-删除元素"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">3.2.3 删除元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-单链表结构与顺序存储结构的优缺点"><span class="nav-number">1.4.</span> <span class="nav-text">4.单链表结构与顺序存储结构的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-时间性能"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 时间性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-空间性能"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 空间性能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-单链表的分类"><span class="nav-number">1.5.</span> <span class="nav-text">5.单链表的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-静态链表"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 静态链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-循环链表"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 循环链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-双向链表"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 双向链表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈与队列"><span class="nav-number">2.</span> <span class="nav-text">栈与队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-定义"><span class="nav-number">2.1.</span> <span class="nav-text">1. 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-栈"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-分类"><span class="nav-number">2.3.</span> <span class="nav-text">3.分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#循环队列"><span class="nav-number">2.3.1.</span> <span class="nav-text">循环队列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树"><span class="nav-number">3.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-定义-1"><span class="nav-number">3.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-相关概念"><span class="nav-number">3.2.</span> <span class="nav-text">2.相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-树的存储结构"><span class="nav-number">3.3.</span> <span class="nav-text">3.树的存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-二叉树"><span class="nav-number">3.4.</span> <span class="nav-text">4.二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-特点"><span class="nav-number">3.4.1.</span> <span class="nav-text">4.1 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-分类"><span class="nav-number">3.4.2.</span> <span class="nav-text">4.2 分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">3.4.3.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-二叉树的存储结构"><span class="nav-number">3.4.4.</span> <span class="nav-text">4.3 二叉树的存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-基本操作"><span class="nav-number">3.4.5.</span> <span class="nav-text">4.4 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-1-插入"><span class="nav-number">3.4.5.1.</span> <span class="nav-text">4.4.1 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-2-查找最小值（最大值）"><span class="nav-number">3.4.5.2.</span> <span class="nav-text">4.4.2 查找最小值（最大值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-3-查找指定值"><span class="nav-number">3.4.5.3.</span> <span class="nav-text">4.4.3 查找指定值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-4-删除结点"><span class="nav-number">3.4.5.4.</span> <span class="nav-text">4.4.4 删除结点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-二叉树的遍历"><span class="nav-number">3.4.6.</span> <span class="nav-text">4.5 二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-1-前序遍历"><span class="nav-number">3.4.6.1.</span> <span class="nav-text">4.5.1 前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-2-中序遍历"><span class="nav-number">3.4.6.2.</span> <span class="nav-text">4.5.2 中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-3-后序遍历"><span class="nav-number">3.4.6.3.</span> <span class="nav-text">4.5.3 后序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-4-层序遍历"><span class="nav-number">3.4.6.4.</span> <span class="nav-text">4.5.4 层序遍历</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zoe</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+<!--page counter part-->
+<script>
+function addCount (Counter) {
+        url=$('.article-date').attr('href').trim();
+        title = $('.article-title').text().trim();
+        var query=new AV.Query(Counter);
+        //use url as unique idnetfication
+        query.equalTo("url",url);
+        query.find({
+            success: function(results){
+                if(results.length>0)
+                {
+                    var counter=results[0];
+                    counter.fetchWhenSave(true); //get recent result
+                    counter.increment("time");
+                    counter.save();
+                }
+                else
+                {
+                    var newcounter=new Counter();
+                    newcounter.set("title",title);
+                    newcounter.set("url",url);
+                    newcounter.set("time",1);
+                    newcounter.save(null,{
+                        success: function(newcounter){
+                        //alert('New object created');
+                        },
+                        error: function(newcounter,error){
+                        alert('Failed to create');
+                        }
+                        });
+                }
+            },
+            error: function(error){
+                //find null is not a error
+                alert('Error:'+error.code+" "+error.message);
+            }
+        });
+}
+$(function(){
+        var Counter=AV.Object.extend("Counter");
+        //only increse visit counting when intering a page
+        if ($('.article-title').length == 1)
+           addCount(Counter);
+        var query=new AV.Query(Counter);
+        query.descending("time");
+        // the sum of popular posts
+        query.limit(10);
+        query.find({
+            success: function(results){
+                    for(var i=0;i<results.length;i++)
+                    {
+                        var counter=results[i];
+                        title=counter.get("title");
+                        url=counter.get("url");
+                        time=counter.get("time");
+                        // add to the popularlist widget
+                        showcontent=title+" ("+time+")";
+                        //notice the "" in href
+                        $('.popularlist').append('<li><a href="'+url+'">'+showcontent+'</a></li>');
+                    }
+                },
+            error: function(error){
+                alert("Error:"+error.code+" "+error.message);
+            }
+            }
+        )
+        });
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
