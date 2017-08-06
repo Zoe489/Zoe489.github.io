@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="作用域链," />
 
 
 
@@ -94,13 +94,14 @@
 
 
 <meta name="description" content="定义  作用域：是一个“地盘”，一个抽象概念，其中没有变量，要通过作用域对应的执行上下文环境来获取变量的值。同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值。作用域中变量的值是执行过程中产生的确定的，而作用域是在函数创建时就确定了。  要查询一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。  作用域最大的用处就是隔离变量，不同作">
+<meta name="keywords" content="作用域链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-作用域链">
 <meta property="og:url" content="http://zoe489.github.io/2017/08/05/javascript-Scope/index.html">
 <meta property="og:site_name" content="乖乖小左">
 <meta property="og:description" content="定义  作用域：是一个“地盘”，一个抽象概念，其中没有变量，要通过作用域对应的执行上下文环境来获取变量的值。同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值。作用域中变量的值是执行过程中产生的确定的，而作用域是在函数创建时就确定了。  要查询一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。  作用域最大的用处就是隔离变量，不同作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-05T04:20:47.415Z">
+<meta property="og:updated_time" content="2017-08-06T13:24:27.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-作用域链">
 <meta name="twitter:description" content="定义  作用域：是一个“地盘”，一个抽象概念，其中没有变量，要通过作用域对应的执行上下文环境来获取变量的值。同一个作用域下，不同的调用会产生不同的执行上下文环境，继而产生不同的变量的值。作用域中变量的值是执行过程中产生的确定的，而作用域是在函数创建时就确定了。  要查询一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。  作用域最大的用处就是隔离变量，不同作">
@@ -224,6 +225,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -401,6 +412,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/作用域链/" rel="tag"># 作用域链</a>
+          
+        </div>
+      
 
       
       
@@ -495,7 +512,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -512,6 +529,15 @@
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
