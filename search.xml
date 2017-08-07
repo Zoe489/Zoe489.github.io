@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[javascript-线程与进程]]></title>
+    <url>%2F2017%2F08%2F07%2Fjavascript-thread-process%2F</url>
+    <content type="text"><![CDATA[一个程序至少有一个进程,一个进程至少有一个线程. 进程（process）是一块包含了某些资源的内存区域。操作系统利用进程把它的工作划分为一些功能单元。进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位。 线程是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源. 多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。]]></content>
+      <categories>
+        <category>javascript语法</category>
+      </categories>
+      <tags>
+        <tag>线程、进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript-正则表达式]]></title>
+    <url>%2F2017%2F08%2F07%2Fjavascript-RegularExpression%2F</url>
+    <content type="text"><![CDATA[用正则表达式验证邮箱格式123456789function(emailAddress) &#123; var str = '^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]&#123;2,4&#125;'; var re = new RegExp(str); //创建正则表达式对象 if(str.test(emailAddress)) &#123; return true; &#125; else &#123; return false; &#125;&#125; 正则表达式符号^ 匹配一个输入或一行的开头，/^a/匹配”an A”，而不匹配”An a”$ 匹配一个输入或一行的结尾，/a$/匹配”An a”，而不匹配”an A”(x) 匹配x保存x在名为$1…$9的变量中x|y 匹配x或y{n} 精确匹配n次{n,} 匹配n次以上{n,m} 匹配n-m次[xyz] 字符集(character set)，匹配这个集合中的任一一个字符(或元字符)[^xyz] 不匹配这个集合中的任何一个字符\w 匹配一个可以组成单词的字符，相当于[a-zA-Z0-9]，匹配大小写字母和数字 量词* 匹配前面元字符0次或多次，/ba*/将匹配b,ba,baa,baaa+ 匹配前面元字符1次或多次，/ba+/将匹配ba,baa,baaa? 匹配前面元字符0次或1次，/ba？/将匹配b,ba RegExp对象的方法test():检索字符串中指定的值。返回 true 或 false。exec()检索字符串中指定的值。返回找到的值，并确定其位置。 用正则表达式验证URL1^((https|http|ftp|rtsp|mms)?:\/\/)+[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\':+!]*([^&lt;&gt;\"\"])*]]></content>
+      <categories>
+        <category>javascript语法</category>
+      </categories>
+      <tags>
+        <tag>Regular Expression</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javascript-setTimeOut()与setInterval()]]></title>
     <url>%2F2017%2F08%2F07%2Fjavascript-setTimeOut-setInterval%2F</url>
     <content type="text"><![CDATA[Javascript用来处理延时和定时任务的setTimeOut和setInterval函数应用非常广泛，它们都用来处理延时和定时任务，比如打开网页一段时间后弹出一个登录框，页面每隔一段时间发送异步请求获取最新数据等等。 setTimeOut() setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式 setTimeout()只执行一次 第一个参数是要执行的code或句柄，第二个是延迟的毫秒数。 用法 1var timeoutID = window.setTimeout(func, [delay, param1, param2, ...]); var timeoutID = window.setTimeout(code, [delay]); clearTimeOut()函数用来清除定时器 实例 12345for(var i=1;i&lt;=3;i++)&#123; setTimeout(function()&#123; console.log(i); &#125;,0);&#125;; 输出4，4，4原因：Javascript事件处理器在线程空闲之前不会运行。那么问题来了，如何让上述代码输出1 2 3？12345for(var i=1;i&lt;=3;i++)&#123; setTimeout((function(a)&#123; //改成立即执行函数 console.log(a); &#125;)(i),0);&#125;; setInterval() setInterval()是在每隔指定的毫秒数循环调用函数或表达式，直到clearInterval()把它清除 第一个参数是要执行的code或句柄，第二个是延迟的毫秒数。 写一个递归，每隔5秒调用自身，一共100次。12345678var counter = 0;var timer = setInterval(function() &#123; alert('test'); counter++; if(counter == 100) &#123; clearInterval(timer); &#125;&#125;,5000);]]></content>
