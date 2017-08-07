@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[javascript-setTimeOut()与setInterval()]]></title>
+    <url>%2F2017%2F08%2F07%2Fjavascript-setTimeOut-setInterval%2F</url>
+    <content type="text"><![CDATA[Javascript用来处理延时和定时任务的setTimeOut和setInterval函数应用非常广泛，它们都用来处理延时和定时任务，比如打开网页一段时间后弹出一个登录框，页面每隔一段时间发送异步请求获取最新数据等等。 setTimeOut() setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式 setTimeout()只执行一次 第一个参数是要执行的code或句柄，第二个是延迟的毫秒数。 用法 1var timeoutID = window.setTimeout(func, [delay, param1, param2, ...]); var timeoutID = window.setTimeout(code, [delay]); clearTimeOut()函数用来清除定时器 实例 12345for(var i=1;i&lt;=3;i++)&#123; setTimeout(function()&#123; console.log(i); &#125;,0);&#125;; 输出4，4，4原因：Javascript事件处理器在线程空闲之前不会运行。那么问题来了，如何让上述代码输出1 2 3？12345for(var i=1;i&lt;=3;i++)&#123; setTimeout((function(a)&#123; //改成立即执行函数 console.log(a); &#125;)(i),0);&#125;; setInterval() setInterval()是在每隔指定的毫秒数循环调用函数或表达式，直到clearInterval()把它清除 第一个参数是要执行的code或句柄，第二个是延迟的毫秒数。 写一个递归，每隔5秒调用自身，一共100次。12345678var counter = 0;var timer = setInterval(function() &#123; alert('test'); counter++; if(counter == 100) &#123; clearInterval(timer); &#125;&#125;,5000);]]></content>
+      <categories>
+        <category>javascript语法</category>
+      </categories>
+      <tags>
+        <tag>setTimeout(); setInterval()</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript-基本数据类型]]></title>
+    <url>%2F2017%2F08%2F07%2Fjavascript-DataType%2F</url>
+    <content type="text"><![CDATA[六种基本数据类型 undefined: 一个未初始化的变量的值为undefined; 一个没有传入实参的形参变量的值为undefined; 如果一个函数什么都不返回,则该函数默认返回undefined; null: 没有对象被呈现 string: boolean: number: sysbol(ES6): null与undefined的不同点 null是一个字面量（而不是全局对象的一个属性,undefined 是）; null是一个表示”无”的对象, Number(null) == 0；undefined是一个表示”无”的原始值, Number(undefined) == NaN。 当声明的变量还未被初始化时,变量的默认值为undefined。 null用来表示尚未存在的对象,常用来表示函数企图返回一个不存在的对象。 undefined表示”缺少值”,就是此处应该有一个值,但是还没有定义。典型用法是： （1）变量被声明了,但没有赋值时,就等于undefined。（2） 调用函数时,应该提供的参数没有提供,该参数等于undefined。 （3）函数没有返回值时,默认返回undefined。 （4）对象没有赋值的属性,该属性的值为undefined。 null表示”没有对象”,即该处不应该有值。典型用法是： （1） 作为函数的参数,表示该函数的参数不是对象。 （2） 作为对象原型链的终点。]]></content>
+      <categories>
+        <category>javascript语法</category>
+      </categories>
+      <tags>
+        <tag>undefined, null</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo-localsearch本地搜索]]></title>
+    <url>%2F2017%2F08%2F07%2Fhexo-localsearch%2F</url>
+    <content type="text"><![CDATA[在git bash上输入npm install hexo-generate-search –save 再安装npm install hexo-generate-searchdb –save 在主题目录下的配置文件_config.yml中修改1234567local_search: enable: true //改为true # if auto, trigger search by changing input # if manual, trigger search by pressing enter key or search button trigger: auto # show top n results per article, show all results by setting to -1 top_n_per_article: 1]]></content>
+      <categories>
+        <category>hexo配置</category>
+      </categories>
+      <tags>
+        <tag>本地搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript-事件流，事件代理]]></title>
+    <url>%2F2017%2F08%2F07%2Fjavascript-EventFlow%2F</url>
+    <content type="text"><![CDATA[事件流事件流模型冒泡型事件流：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。捕获型事件流：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。1234567891011121314&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head lang="en"&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id="outer"&gt; &lt;div id="inner"&gt; Click me! &lt;/div&gt; &lt;/div&gt; &lt;/body&gt;&lt;/html&gt; 在冒泡型事件流click事件的传播顺序为：inner-&gt;outer-&gt;body-&gt;html-&gt;document 在捕获型事件流click事件的传播顺序为：document-&gt;html-&gt;body-&gt;outer-&gt;inner DOM事件流DOM事件流采用捕获+冒泡。两种事件流都会触发DOM的所有对象，从document对象开始，也在document对象结束。 事件捕获阶段：实际目标在捕获阶段不会接收事件。也就是在捕获阶段。上图中为1~3. 处于目标阶段：事件上发生并处理。但是事件处理会被看成是冒泡阶段的一部分。 冒泡阶段：事件又传播回文档。 在DOM事件流中，实际的目标inner在捕获阶段不会接受到事件。这意味着在捕获阶段，事件到outer就停止了，下一个阶段是“处于目标”阶段，于是事件在inner 上发生，并在事件处理中被看成是冒泡阶段的一部分。然后，冒泡阶段发生，事件又传播回文档。 DOM2级事件定义了两个方法用于处理置顶和删除事件处理程序的操作addEventListener()和removeEventListener()，所有DOM节点都包含这两个方法，并且它们都接受3个参数：要处理的事件名，作为事件处理的函数和一个布尔值。最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序，反之则是在事件冒泡阶段处理程序。DOM2级方法添加事件处理程序的好处是可以添加多个事件处理程序，会按照添加顺序被处理（无论是捕获还是冒泡）。而IE不同的它有自己的方法attachEvent()和detachEvent,这两个接受相同的两个参数：事件处理程序名称和事件处理程序函数。 DOM2级事件定义了两个方法用于处理置顶和删除事件处理程序的操作addEventListener()和removeEventListener()，所有DOM节点都包含这两个方法，并且它们都接受3个参数：要处理的事件名，作为事件处理的函数和一个布尔值。最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序，反之则是在事件冒泡阶段处理程序。DOM2级方法添加事件处理程序的好处是可以添加多个事件处理程序，会按照添加顺序被处理（无论是捕获还是冒泡）。 IE的事件流IE没有提供对事件捕获的支持，所以IE跟标准浏览器对DOM事件流实现不一样。而IE不同的它有自己的方法attachEvent()和detachEvent,这两个接受相同的两个参数：事件处理程序名称和事件处理程序函数。 添加和删除事件监听器：w3c： addEventListener/ removeEventListener()IE: attachEvent()/ detachEvent() 事件监听：IE事件监听器使用全局的Event对象，而w3c将event对象作为参数传递给监听器123function handler（event）&#123; event = event || window.event;&#125; 阻止冒泡：IE： e.cancelBubble=true;w3c：e.stopPropagation(); attachEvent 与addEventListener区别一、适应的浏览器版本不同二、attachEvent中的事件带on，而addEventListener中的事件不带on三、参数的个数不同attachEvent()，只有冒泡；addEventListener(事件名称,接收事件处理的函数,bool值) 默认为false，事件句柄在冒泡阶段执行，true在捕获阶段。 event.stopPropagation(); 支持FF=&gt; 停止传播event.cancelBubble = true; 支持IE =&gt; 取消冒泡 自动执行点击事件，兼容IE12345678910111213141516171819202122window.onload = function() &#123; var btn = document.getElementById('my-btn'); var handler = function() &#123; alert(this.tagName); &#125; if (btn.addEventListener) &#123; // 调用的处理程序使用事件目标作为它们的this值 // 此处也可以传递e事件：handler(e); e.target.tagName btn.addEventListener("click", handler, false); &#125; else if (btn.attachEvent) &#123; // 注册的处理程序作为函数调用，它们的this值是全局（window）对象 // 此处也可以传递e事件：handler(e); e.srcElement.tagName btn.attachEvent("onclick", handler.call(btn)); &#125; if (document.all) &#123; btn.click(); &#125; else &#123; var evt = document.createEvent("MouseEvents"); evt.initEvent("click", true, true); btn.dispatchEvent(evt); &#125;;&#125; 事件代理事件代理的原理事件代理的原理用到的就是事件冒泡和目标元素，把事件处理器添加到父元素，等待子元素事件冒泡，并且父元素能够通过target（IE为srcElement）判断是哪个子元素，从而做相应处理。 传统事件处理做法是为每个元素添加事件处理器。 123456789101112131415161718192021222324252627&lt;body&gt; &lt;ul id="color-list"&gt; &lt;li&gt;red&lt;/li&gt; &lt;li&gt;orange&lt;/li&gt; &lt;li&gt;yellow&lt;/li&gt; &lt;li&gt;green&lt;/li&gt; &lt;li&gt;blue&lt;/li&gt; &lt;li&gt;indigo&lt;/li&gt; &lt;li&gt;purple&lt;/li&gt; &lt;/ul&gt; &lt;script&gt; (function()&#123; var colorList=document.getElementById("color-list"); var colors=colorList.getElementsByTagName("li"); for(var i=0;i&lt;colors.length;i++) &#123; colors[i].addEventListener('click',showColor,false); &#125;; function showColor(e) &#123; e=e||window.event; var targetElement=e.target||e.srcElement; alert(targetElement.innerHTML); &#125; &#125;)(); &lt;/script&gt;&lt;/body&gt; 事件代理的处理方式是： 12345678910111213141516171819202122232425&lt;body&gt; &lt;ul id="color-list"&gt; &lt;li&gt;red&lt;/li&gt; &lt;li&gt;orange&lt;/li&gt; &lt;li&gt;yellow&lt;/li&gt; &lt;li&gt;green&lt;/li&gt; &lt;li&gt;blue&lt;/li&gt; &lt;li&gt;indigo&lt;/li&gt; &lt;li&gt;purple&lt;/li&gt; &lt;/ul&gt; &lt;script&gt; (function()&#123; var colorList=document.getElementById("color-list"); colorList.addEventListener('click',showColor,false); function showColor(e) &#123; e=e||window.event; var targetElement=e.target||e.srcElement; if(targetElement.nodeName.toLowerCase()==="li")&#123; alert(targetElement.innerHTML); &#125; &#125; &#125;)(); &lt;/script&gt;&lt;/body&gt; 事件代理的好处 将多个事件处理器减少到一个，因为事件处理器要驻留内存，这样就提高了性能。 DOM更新无需重新绑定事件处理器，因为事件代理对不同子元素可采用不同处理方法。 事件代理的问题事件代理同时绑定了li和span，当点击span的时候，li和span都会冒泡。1234567891011&lt;li&gt;&lt;span&gt;li中的span的内容&lt;/span&gt;&lt;/li&gt;&lt;script&gt; $(document).on('click', 'li', function(e)&#123; alert('li li'); &#125;); $(document).on('click', 'span', function(e)&#123; alert('li span'); &#125;)&lt;/script&gt; 解决办法： span的事件处理程序中阻止冒泡 1234$(document).on('click', 'span', function(e)&#123; alert('li span'); e.stopPropagation();&#125;) li的事件处理程序中检测target元素 1234567$(document).on('click', 'li', function (e) &#123; if (e.target.nodeName == 'SPAN') &#123; e.stopPropagation(); return; &#125; alert('li li');&#125;);]]></content>
+      <categories>
+        <category>javascript语法</category>
+      </categories>
+      <tags>
+        <tag>事件流; 事件代理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javascript-数组-字符串方法]]></title>
     <url>%2F2017%2F08%2F06%2Fjavascript-Array-String%2F</url>
     <content type="text"><![CDATA[Array数组 concat()用途 用于连接两个或多个数组，返回被连接的数组。 语法 arrayObject.concat(arrayX,arrayY) 实例12var arr = ['A', 'B', 'C'];var arr2 = [1,2,3]; arr.concat(arr2);//['A','B','C','D',1,2,3],arr并没有被修改 pop()用途 删除并返回最后一个元素 语法 arrayObject.pop() 实例12var arr = ['A', 'B', 'C'];arr.pop();//arr=['A','B'] push()用途 向数组尾部添加一个或更多元素，返回新的长度。 语法 arrayObject.push(elment1,element2…) 实例12var arr = ['A', 'B', 'C'];arr.push('J','K');//['A','B','C','J','K'] shift()用途 删除并返回数组的第一个元素 实例12var arr = ['A', 'B', 'C'];arr.shift();//['B','C'] slice()用途 截取数组的部分长度，然后返回新的数组 实例123arr.slice(0,2);//从开始索引0开始，到结束索引结束，但不包括结束索引，['A','B']arr.slice(2);//从开始到结束，['D'] splice()用途 向/从数组中添加/删除项目，然后返回被删除的项目，会改变原始数组 语法 arrayObject.splice(index,howmany,item1,item2…) 实例123456var arr = [1,2,3,4,5];arr.splice(2,0,6); // arr=[1,2,6,3,4,5]在下标为2的位置上添加，0表示添加，返回[]arr.splice(2,1,7);// arr=[1,2,7,3,4,5]在下标为2的位置上删除该元素并替换成7，1代表删除，返回[6]arr.splice(1,3); //arr=[1,4,5],返回被删除的元素[2,7,3]arr.splice(1,2,6,8);//arr=[1,6,8]，返回被删除的元素[4,5] unshift()用途 向数组头部添加一个或更多元素，并返回新的长度。 实例12var arr = [1,2,3,4,5];arr.unshift(6,7);//返回新长度3，arr=[6,7,1,2,3,4,5] indexOf()用途 搜索一个指定元素的位置 实例12var arr = [1,2,3,4,5];arr.indexOf(2); // 1 forEach()用途对数组进行遍历循环，对数组中的每一项运行给定函数。这个方法没有返回值。参数都是function类型，默认有传参，参数分别为：遍历的数组内容；第对应的数组索引，数组本身。 实例12345678910var arr = [1, 2, 3, 4, 5];arr.forEach(function(x, index, a)&#123; console.log(x + '|' + index + '|' + (a === arr));&#125;);// 输出为：// 1|0|true// 2|1|true// 3|2|true// 4|3|true// 5|4|true map()用途指“映射”，对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。 实例12345var arr = [1, 2, 3, 4, 5];var arr2 = arr.map(function(item)&#123; return item*item;&#125;);console.log(arr2); //[1, 4, 9, 16, 25] String charAt()用途 返回在指定位置的字符 实例12var s = 'abcdef';s.charAt(3);// d indexOf()用途 返回String对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。 语法 strObj.indexOf(substr[,startIndex]) 实例12var str = "ABCDECDF";str.indexOf("CD"，1); // 由1位置从左向右查找 123... 返回2 slice()用途 返回字符串片段。 语法strObj.slice(start[,end])start下标从0开始的strObj指定部分其实索引。如果start为负，将它作为length+start处理，此处length为字符串的长度。end下标从0开始的strObj指定部分结束索引。如果end为负，将它作为length+end处理，此处length为字符串的长度。 实例12var str = "ABCDEF";str.slice(2,4); //第2个参数为&lt;end的下标，返回CD split()用途 把一个字符串分割成字符串数组 语法stringObject.split(separator,howmany) 实例12var str="How are you doing today?"console.log(str.split(" ")); // How,are,you,doing,today? substr()用途抽取从 start 下标开始的指定数目的字符 语法stringObject.substr(start,length) 实例12var str = "hello world";console.log(str.substr(3,4));// lo w substring()用途提取字符串中介于两个指定下标之间的字符。 语法stringObject.substring(start,stop) 实例12var str = "hello world";console.log(str.substring(3,5));// lo]]></content>
@@ -73,6 +117,9 @@
       <categories>
         <category>javascript语法</category>
       </categories>
+      <tags>
+        <tag>闭包</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[数据结构(javascrit)]]></title>
