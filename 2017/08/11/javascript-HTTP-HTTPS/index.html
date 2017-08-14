@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TCP,HTTP,HTTPS," />
 
 
 
@@ -93,13 +93,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="乖乖小左">
-<meta property="og:url" content="http://zoe489.github.io/tags/Regular-Expression/index.html">
+<meta name="description" content="为什么使用http2.0  慢影响一个网络请求的因素主要有两个，带宽和延迟。大部分时候都是延迟在影响响应速度。 连接无法复用连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动对文件类大的请求影响较大。 head of line blockinghead of line blocking会导致贷款无法被充分利用。  http2.0 VS http1.1 多路">
+<meta name="keywords" content="TCP,HTTP,HTTPS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-HTTP与HTTPS">
+<meta property="og:url" content="http://zoe489.github.io/2017/08/11/javascript-HTTP-HTTPS/index.html">
 <meta property="og:site_name" content="乖乖小左">
+<meta property="og:description" content="为什么使用http2.0  慢影响一个网络请求的因素主要有两个，带宽和延迟。大部分时候都是延迟在影响响应速度。 连接无法复用连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动对文件类大的请求影响较大。 head of line blockinghead of line blocking会导致贷款无法被充分利用。  http2.0 VS http1.1 多路">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/http-6.png&objectId=1190000005085636&token=43703ac94c91947ba9645504b8781cf1">
+<meta property="og:image" content="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/Header%E5%A4%8D%E7%94%A8.png&objectId=1190000005085636&token=881e1adc7d05c8bab090e1d9f60e188a">
+<meta property="og:image" content="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%88%86%E5%B8%A7.png&objectId=1190000005085636&token=e28a899dad66e106087368ee8d4f5629">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif">
+<meta property="og:updated_time" content="2017-08-14T03:17:59.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="乖乖小左">
+<meta name="twitter:title" content="javascript-HTTP与HTTPS">
+<meta name="twitter:description" content="为什么使用http2.0  慢影响一个网络请求的因素主要有两个，带宽和延迟。大部分时候都是延迟在影响响应速度。 连接无法复用连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动对文件类大的请求影响较大。 head of line blockinghead of line blocking会导致贷款无法被充分利用。  http2.0 VS http1.1 多路">
+<meta name="twitter:image" content="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/http-6.png&objectId=1190000005085636&token=43703ac94c91947ba9645504b8781cf1">
 
 
 
@@ -127,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://zoe489.github.io/tags/Regular-Expression/"/>
+  <link rel="canonical" href="http://zoe489.github.io/2017/08/11/javascript-HTTP-HTTPS/"/>
 
 
 
 
 
-  <title>标签: Regular Expression | 乖乖小左</title>
+  <title>javascript-HTTP与HTTPS | 乖乖小左</title>
   
 
 
@@ -158,7 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,44 +299,203 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>Regular Expression<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/11/javascript-HTTP-HTTPS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zoe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乖乖小左">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript-HTTP与HTTPS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T20:05:40+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript语法/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript语法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/11/javascript-HTTP-HTTPS/" class="leancloud_visitors" data-flag-title="javascript-HTTP与HTTPS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="为什么使用http2-0"><a href="#为什么使用http2-0" class="headerlink" title="为什么使用http2.0"></a>为什么使用http2.0</h1><hr>
+<ol>
+<li>慢<br>影响一个网络请求的因素主要有两个，带宽和延迟。大部分时候都是延迟在影响响应速度。</li>
+<li>连接无法复用<br>连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动对文件类大的请求影响较大。</li>
+<li>head of line blocking<br>head of line blocking会导致贷款无法被充分利用。</li>
+</ol>
+<h1 id="http2-0-VS-http1-1"><a href="#http2-0-VS-http1-1" class="headerlink" title="http2.0 VS http1.1"></a>http2.0 VS http1.1</h1><ul>
+<li>多路复用<br>多路复用通过多个请求stream共享一个tcp连接的方式，解决了http1.x holb（head of line blocking）的问题，降低了延迟同时提高了带宽的利用率。<br><img src="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/http-6.png&amp;objectId=1190000005085636&amp;token=43703ac94c91947ba9645504b8781cf1" alt=""></li>
+<li>压缩头部<br>HTTP/2.0规定了在客户端和服务器端会使用并且维护「首部表」来跟踪和存储之前发送的键值对，对于相同的头部，不必再通过请求发送，只需发送一次。<br>事实上,如果请求中不包含首部（例如对同一资源的轮询请求），那么首部开销就是零字节。此时所有首部都自动使用之前请求发送的首部。<br>如果首部发生变化了，那么只需要发送变化了数据在Headers帧里面，新增或修改的首部帧会被追加到“首部表”。首部表在 HTTP2.0的连接存续期内始终存在,由客户端和服务器共同渐进地更新。<br><img src="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/Header%E5%A4%8D%E7%94%A8.png&amp;objectId=1190000005085636&amp;token=881e1adc7d05c8bab090e1d9f60e188a" alt=""></li>
+<li>二进制分帧<br>在应用层与传输层之间增加一个二进制分帧层，以此达到“在不改动HTTP的语义，HTTP 方法、状态码、URI及首部字段的情况下，突破HTTP1.1的性能限制，改进传输性能，实现低延迟和高吞吐量。”<br>在二进制分帧层上，HTTP2.0会将所有传输的信息分割为更小的消息和帧,并对它们采用二进制格式的编码，其中HTTP1.x的首部信息会被封装到Headers帧，而我们的request body则封装到Data帧里面。<br><img src="https://segmentfault.com/image?src=http://7xs2h9.com1.z0.glb.clouddn.com/blog/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%88%86%E5%B8%A7.png&amp;objectId=1190000005085636&amp;token=e28a899dad66e106087368ee8d4f5629" alt=""></li>
+<li>请求优先级<br>多路复用导致所有资源都是并行发送，所以需要优先级的概念，这样可以对重要文件进行先传输，加速页面的渲染。</li>
+<li>服务器推送<br>服务器推送是指客户端请求之前发送数据的机制。</li>
+</ul>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>HTTP：是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p>
+<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p>是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p>
+<h2 id="HTTPS工作原理"><a href="#HTTPS工作原理" class="headerlink" title="HTTPS工作原理"></a>HTTPS工作原理</h2><p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。<br>（1）客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。<br>（2）Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。<br>（3）客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。<br>（4）客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。<br>（5）Web服务器利用自己的私钥解密出会话密钥。<br>（6）Web服务器利用会话密钥加密与客户端之间的通信。<br><img src="http://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif" alt=""></p>
+<h2 id="HTTPS的优点"><a href="#HTTPS的优点" class="headerlink" title="HTTPS的优点"></a>HTTPS的优点</h2><p>尽管HTTPS并非绝对安全，掌握根证书的机构、掌握加密算法的组织同样可以进行中间人形式的攻击，但HTTPS仍是现行架构下最安全的解决方案，主要有以下几个好处：<br>（1）使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；<br>（2）HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。<br>（3）HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。<br>（4）谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</p>
+<h1 id="HTTP-与HTTPS"><a href="#HTTP-与HTTPS" class="headerlink" title="HTTP 与HTTPS"></a>HTTP 与HTTPS</h1><p>http是HTTP协议运行在TCP之上。所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。<br>1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。<br>2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。<br>3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/08/07/javascript-RegularExpression/" itemprop="url">
-              
-                <span itemprop="name">javascript-正则表达式</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-07T20:35:40+08:00"
-              content="2017-08-07" >
-          08-07
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TCP/" rel="tag"># TCP</a>
+          
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          
+            <a href="/tags/HTTPS/" rel="tag"># HTTPS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/10/javascript-howtoshowhtml/" rel="next" title="javascript-从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)">
+                <i class="fa fa-chevron-left"></i> javascript-从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -334,6 +503,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -354,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -428,6 +610,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么使用http2-0"><span class="nav-number">1.</span> <span class="nav-text">为什么使用http2.0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http2-0-VS-http1-1"><span class="nav-number">2.</span> <span class="nav-text">http2.0 VS http1.1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS"><span class="nav-number">4.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS工作原理"><span class="nav-number">4.1.</span> <span class="nav-text">HTTPS工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS的优点"><span class="nav-number">4.2.</span> <span class="nav-text">HTTPS的优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-与HTTPS"><span class="nav-number">5.</span> <span class="nav-text">HTTP 与HTTPS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -550,10 +748,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
