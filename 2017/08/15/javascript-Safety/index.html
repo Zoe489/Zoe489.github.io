@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端攻击技术，XSS,CSRF," />
 
 
 
@@ -93,13 +93,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="乖乖小左">
-<meta property="og:url" content="http://zoe489.github.io/tags/事件流-事件代理/index.html">
+<meta name="description" content="简单的HTTP协议本身并不存在安全性问题，因此协议本身几乎不会成为攻击的对象。应用HTTP协议的服务器和客户端，以及运行在服务器上的Web应用等资源才是攻击目标。在Web应用中，从浏览器那接收到的HTTP请求的全部内容，都可以在客户端自由地变更、篡改。所以Web应用可能会接收到与预期数据不相同的内容。在HTTP请求报文内加载攻击代码，就能发起对Web应用的攻击。通过URL查询字段或表单、HTTP首">
+<meta name="keywords" content="前端攻击技术，XSS,CSRF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-前端安全（XSS,CSRF攻击技术）">
+<meta property="og:url" content="http://zoe489.github.io/2017/08/15/javascript-Safety/index.html">
 <meta property="og:site_name" content="乖乖小左">
+<meta property="og:description" content="简单的HTTP协议本身并不存在安全性问题，因此协议本身几乎不会成为攻击的对象。应用HTTP协议的服务器和客户端，以及运行在服务器上的Web应用等资源才是攻击目标。在Web应用中，从浏览器那接收到的HTTP请求的全部内容，都可以在客户端自由地变更、篡改。所以Web应用可能会接收到与预期数据不相同的内容。在HTTP请求报文内加载攻击代码，就能发起对Web应用的攻击。通过URL查询字段或表单、HTTP首">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-15T13:36:33.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="乖乖小左">
+<meta name="twitter:title" content="javascript-前端安全（XSS,CSRF攻击技术）">
+<meta name="twitter:description" content="简单的HTTP协议本身并不存在安全性问题，因此协议本身几乎不会成为攻击的对象。应用HTTP协议的服务器和客户端，以及运行在服务器上的Web应用等资源才是攻击目标。在Web应用中，从浏览器那接收到的HTTP请求的全部内容，都可以在客户端自由地变更、篡改。所以Web应用可能会接收到与预期数据不相同的内容。在HTTP请求报文内加载攻击代码，就能发起对Web应用的攻击。通过URL查询字段或表单、HTTP首">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://zoe489.github.io/tags/事件流-事件代理/"/>
+  <link rel="canonical" href="http://zoe489.github.io/2017/08/15/javascript-Safety/"/>
 
 
 
 
 
-  <title>标签: 事件流; 事件代理 | 乖乖小左</title>
+  <title>javascript-前端安全（XSS,CSRF攻击技术） | 乖乖小左</title>
   
 
 
@@ -158,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,44 +294,206 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>事件流; 事件代理<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/15/javascript-Safety/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zoe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乖乖小左">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript-前端安全（XSS,CSRF攻击技术）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T20:00:40+08:00">
+                2017-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript语法/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript语法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/15/javascript-Safety/" class="leancloud_visitors" data-flag-title="javascript-前端安全（XSS,CSRF攻击技术）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>简单的HTTP协议本身并不存在安全性问题，因此协议本身几乎不会成为攻击的对象。应用HTTP协议的服务器和客户端，以及运行在服务器上的Web应用等资源才是攻击目标。<br>在Web应用中，从浏览器那接收到的HTTP请求的全部内容，都可以在客户端自由地变更、篡改。所以Web应用可能会接收到与预期数据不相同的内容。<br>在HTTP请求报文内加载攻击代码，就能发起对Web应用的攻击。通过URL查询字段或表单、HTTP首部、Cookie等途径把攻击代码传入，若这时Web应用存在安全漏洞，那内部信息就会遭到窃取，或被攻击者拿到管理权限。<br>在web网页的脚本中，有些部分的显示内容会依据外界输入值而发生变化，而如果这些声称html的程序中存在问题，就会滋生名为跨站脚本的安全隐患<br>Web应用程序中，如果存在XSS漏洞，就会有以下风险：<br>1、用户的浏览器中运行攻击者的恶意脚本，从而导致库kit信息被窃取，攻击者就会假冒用户的信息进行登录。<br>2、攻击者能够获取用户的权限，来恶意使用web应用的功能。<br>3、可以向用户使用伪造的数据表单，通过钓鱼的方式来窃取用户的个人信息。也就是我们这里讲到的主要的钓鱼攻击和盗取cookie</p>
+<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>Xss(cross-site scripting)攻击指的是攻击者往Web页面里插入恶意html标签或者javascript代码。比如：攻击者在论坛中放一个 看似安全的链接，骗取用户点击后，窃取cookie中的用户私密信息；或者攻击者在论坛中加一个恶意表单， 当用户提交表单的时候，却把信息传送到攻击者的服务器中，而不是用户原本以为的信任站点。</p>
+<h1 id="XSS防范方法"><a href="#XSS防范方法" class="headerlink" title="XSS防范方法"></a>XSS防范方法</h1><p>1.代码里对用户输入的地方和变量都需要仔细检查长度和对”&lt;”,”&gt;”,”;”,”’”等字符做过滤；其次任何内容写到页面之前都必须加以encode，避免不小心把html tag 弄出来。这一个层面做好，至少可以堵住超过一半的XSS 攻击。<br>2.避免直接在cookie 中泄露用户隐私，例如email、密码等等。<br>3.通过使cookie 和系统ip 绑定来降低cookie 泄露后的危险。这样攻击者得到的cookie 没有实际价值，不可能拿来重放。<br>4.尽量采用POST 而非GET 提交表单</p>
+<h1 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h1><p>CSRF（Cross-site request forgery），中文名称：跨站请求伪造。<br>你这可以这么理解CSRF攻击：攻击者盗用了你的身份，以你的名义发送恶意请求。CSRF能够做的事情包括：以你名义发送邮件，发消息，盗取你的账号，甚至于购买商品，虚拟货币转账……造成的问题包括：个人隐私泄露以及财产安全。</p>
+<h2 id="CSRF攻击攻击原理及过程"><a href="#CSRF攻击攻击原理及过程" class="headerlink" title="CSRF攻击攻击原理及过程"></a>CSRF攻击攻击原理及过程</h2><ol>
+<li>用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A；</li>
+<li>在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A；</li>
+<li>用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B；</li>
+<li>网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A；</li>
+<li>浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户C的Cookie信息以C的权限处理该请求，导致来自网站B的恶意代码被执行。</li>
+</ol>
+<h2 id="CSRF漏洞检测"><a href="#CSRF漏洞检测" class="headerlink" title="CSRF漏洞检测"></a>CSRF漏洞检测</h2><p>  检测CSRF漏洞是一项比较繁琐的工作，最简单的方法就是抓取一个正常请求的数据包，去掉Referer字段后再重新提交，如果该提交还有效，那么基本上可以确定存在CSRF漏洞。</p>
+<h2 id="防御CSRF攻击"><a href="#防御CSRF攻击" class="headerlink" title="防御CSRF攻击"></a>防御CSRF攻击</h2><ol>
+<li>验证HTTP Referer字段</li>
+<li>在请求地址中添加token并验证</li>
+<li>在HTTP头重自定义属性并验证</li>
+</ol>
+<h1 id="XSS与CSRF有什么区别吗？"><a href="#XSS与CSRF有什么区别吗？" class="headerlink" title="XSS与CSRF有什么区别吗？"></a>XSS与CSRF有什么区别吗？</h1><p>XSS是获取信息，不需要提前知道其他用户页面的代码和数据包。CSRF是代替用户完成指定的动作，需要知道其他用户页面的代码和数据包。<br>要完成一次CSRF攻击，受害者必须依次完成两个步骤：<br>1.登录受信任网站A，并在本地生成Cookie。 　　2.在不登出A的情况下，访问危险网站B。</p>
+<p>CSRF的防御<br>1.服务端的CSRF方式方法很多样，但总的思想都是一致的，就是在客户端页面增加伪随机数。<br>2.使用验证码</p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/08/07/javascript-EventFlow/" itemprop="url">
-              
-                <span itemprop="name">javascript-事件流，事件代理</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-07T14:13:40+08:00"
-              content="2017-08-07" >
-          08-07
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端攻击技术，XSS/" rel="tag"># 前端攻击技术，XSS</a>
+          
+            <a href="/tags/CSRF/" rel="tag"># CSRF</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/11/javascript-HTTP-HTTPS/" rel="next" title="javascript-HTTP与HTTPS">
+                <i class="fa fa-chevron-left"></i> javascript-HTTP与HTTPS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/12/interviewQuestions/" rel="prev" title="js前端面试笔记">
+                js前端面试笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -334,6 +501,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -354,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -370,7 +550,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -381,7 +561,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -392,7 +572,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -428,6 +608,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS"><span class="nav-number">1.</span> <span class="nav-text">XSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS防范方法"><span class="nav-number">2.</span> <span class="nav-text">XSS防范方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF"><span class="nav-number">3.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF攻击攻击原理及过程"><span class="nav-number">3.1.</span> <span class="nav-text">CSRF攻击攻击原理及过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF漏洞检测"><span class="nav-number">3.2.</span> <span class="nav-text">CSRF漏洞检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御CSRF攻击"><span class="nav-number">3.3.</span> <span class="nav-text">防御CSRF攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XSS与CSRF有什么区别吗？"><span class="nav-number">4.</span> <span class="nav-text">XSS与CSRF有什么区别吗？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -550,10 +746,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
