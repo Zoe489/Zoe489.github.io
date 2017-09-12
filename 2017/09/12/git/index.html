@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="内存泄漏," />
+  <meta name="keywords" content="git命令," />
 
 
 
@@ -93,18 +93,20 @@
 
 
 
-<meta name="description" content="什么叫内存泄漏不再用到的内存，没有及时释放，就叫做内存泄漏。 哪些操作会造成内存泄漏？ setTimeout 的第一个参数使用字符串而非函数的话,会引发内存泄漏。 闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时,就会产生一个循环） 全局变量引起的内存泄漏解决办法： 使用严格模式’use strict’ DOM清空或删除，事件未清除导致的内存泄露 子元素存在引用引起的内存泄漏 被遗忘的计时器">
-<meta name="keywords" content="内存泄漏">
+<meta name="description" content="新建12345# 新建git代码库$ git init# 下载一个项目和它的整个代码历史$ git clone [url] 配置git的配置文件为.gitconfig 123456# 显示当前的git配置$ git config --list# 设置提交代码时的用户信息$ git config user.name &quot;[name]&quot;$ git config user.email &quot;[email a">
+<meta name="keywords" content="git命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript-内存泄漏">
-<meta property="og:url" content="http://zoe489.github.io/2017/08/09/javascript-MemoryLeak/index.html">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http://zoe489.github.io/2017/09/12/git/index.html">
 <meta property="og:site_name" content="乖乖小左">
-<meta property="og:description" content="什么叫内存泄漏不再用到的内存，没有及时释放，就叫做内存泄漏。 哪些操作会造成内存泄漏？ setTimeout 的第一个参数使用字符串而非函数的话,会引发内存泄漏。 闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时,就会产生一个循环） 全局变量引起的内存泄漏解决办法： 使用严格模式’use strict’ DOM清空或删除，事件未清除导致的内存泄露 子元素存在引用引起的内存泄漏 被遗忘的计时器">
+<meta property="og:description" content="新建12345# 新建git代码库$ git init# 下载一个项目和它的整个代码历史$ git clone [url] 配置git的配置文件为.gitconfig 123456# 显示当前的git配置$ git config --list# 设置提交代码时的用户信息$ git config user.name &quot;[name]&quot;$ git config user.email &quot;[email a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T12:40:05.699Z">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
+<meta property="og:updated_time" content="2017-09-12T13:46:14.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript-内存泄漏">
-<meta name="twitter:description" content="什么叫内存泄漏不再用到的内存，没有及时释放，就叫做内存泄漏。 哪些操作会造成内存泄漏？ setTimeout 的第一个参数使用字符串而非函数的话,会引发内存泄漏。 闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时,就会产生一个循环） 全局变量引起的内存泄漏解决办法： 使用严格模式’use strict’ DOM清空或删除，事件未清除导致的内存泄露 子元素存在引用引起的内存泄漏 被遗忘的计时器">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="新建12345# 新建git代码库$ git init# 下载一个项目和它的整个代码历史$ git clone [url] 配置git的配置文件为.gitconfig 123456# 显示当前的git配置$ git config --list# 设置提交代码时的用户信息$ git config user.name &quot;[name]&quot;$ git config user.email &quot;[email a">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://zoe489.github.io/2017/08/09/javascript-MemoryLeak/"/>
+  <link rel="canonical" href="http://zoe489.github.io/2017/09/12/git/"/>
 
 
 
 
 
-  <title>javascript-内存泄漏 | 乖乖小左</title>
+  <title>git常用命令 | 乖乖小左</title>
   
 
 
@@ -304,7 +306,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/09/javascript-MemoryLeak/">
+    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/09/12/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zoe">
@@ -321,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javascript-内存泄漏</h1>
+          <h1 class="post-title" itemprop="name headline">git常用命令</h1>
         
 
         <div class="post-meta">
@@ -333,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T17:00:40+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T13:00:40+08:00">
+                2017-09-12
               </time>
             
 
@@ -356,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript语法/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript语法</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -373,7 +375,7 @@
 
           
           
-             <span id="/2017/08/09/javascript-MemoryLeak/" class="leancloud_visitors" data-flag-title="javascript-内存泄漏">
+             <span id="/2017/09/12/git/" class="leancloud_visitors" data-flag-title="git常用命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,22 +404,17 @@
       
 
       
-        <h1 id="什么叫内存泄漏"><a href="#什么叫内存泄漏" class="headerlink" title="什么叫内存泄漏"></a>什么叫内存泄漏</h1><p>不再用到的内存，没有及时释放，就叫做内存泄漏。</p>
-<h1 id="哪些操作会造成内存泄漏？"><a href="#哪些操作会造成内存泄漏？" class="headerlink" title="哪些操作会造成内存泄漏？"></a>哪些操作会造成内存泄漏？</h1><ul>
-<li>setTimeout 的第一个参数使用字符串而非函数的话,会引发内存泄漏。</li>
-<li>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时,就会产生一个循环）</li>
-<li>全局变量引起的内存泄漏<br>解决办法： 使用严格模式’use strict’</li>
-<li>DOM清空或删除，事件未清除导致的内存泄露</li>
-<li>子元素存在引用引起的内存泄漏</li>
-<li>被遗忘的计时器或回调函数<br>解决办法：removeEventListener()，现状的浏览器可以正确检测和处理循环引用。</li>
-</ul>
-<h1 id="javascript垃圾回收方法"><a href="#javascript垃圾回收方法" class="headerlink" title="javascript垃圾回收方法"></a>javascript垃圾回收方法</h1><ul>
-<li>标记清除（mark and sweep）<br>这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将其标记为“进入环境”，当变量离开环境的时候（函数执行结束）将其标记为“离开环境”。</li>
-</ul>
-<p>垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成之后仍存在标记的就是要删除的变量了</p>
-<ul>
-<li>引用计数(reference counting)<br>在低版本IE中经常会出现内存泄露，很多时候就是因为其采用引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明了一个 变量并将一个引用类型赋值给该变量的时候这个值的引用次数就加1，如果该变量的值变成了另外一个，则这个值得引用次数减1，当这个值的引用次数变为0的时候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为0的值占用的空间。</li>
-</ul>
+        <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt=""></p>
+<h1 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 新建git代码库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git init</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 下载一个项目和它的整个代码历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> [url]</span></div></pre></td></tr></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>git的配置文件为<code>.gitconfig</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 显示当前的git配置</span></div><div class="line">$ git<span class="built_in"> config </span>--list</div><div class="line"></div><div class="line"><span class="comment"># 设置提交代码时的用户信息</span></div><div class="line">$ git<span class="built_in"> config </span>user.name <span class="string">"[name]"</span></div><div class="line">$ git<span class="built_in"> config </span>user.email <span class="string">"[email address]"</span></div></pre></td></tr></table></figure>
+<h1 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将工作文件修改提交到本地暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add &lt;file&gt;</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 将所有修改过的工作文件提交到暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add .</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加每个变化前，都会要求确认</span></div><div class="line"><span class="meta">#</span><span class="bash"> 对于同一个文件的多处变化，可以实现分次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add -p</span></div></pre></td></tr></table></figure>
+<h1 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 删除工作区文件，并将这次删除放入暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git rm [file1] [file2]</span></div></pre></td></tr></table></figure>
+<h1 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 提交暂存区到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交工作区自上次commit之后的变化，直接到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -a</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交时显示所有diff信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -v</span></div></pre></td></tr></table></figure>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -r</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有本地和远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -a</span></div><div class="line"><span class="meta"></span></div><div class="line"></div><div class="line">#<span class="bash"> 新建一个分支，但依然停留在当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，并切换到该分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，与指定的远程分支建立追踪关系</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch --track [branch][remote-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 切换到指定分支，并更新工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 合并指定分支到当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git merge [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 选择一个commit,合并进当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git cherry-pick [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -d [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push origin --delete [branch-name]</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -dr [remote/branch]</span></div></pre></td></tr></table></figure>
+<h1 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 显示有变更的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git status</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示当前分支的版本历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示暂存区和工作区的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff</span></div></pre></td></tr></table></figure>
+<h1 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 下载远程仓库的所有变动</span></div><div class="line">$ git fetch</div><div class="line"></div><div class="line"><span class="section"># 显示所有远程仓库</span></div><div class="line">$ git remote -v</div><div class="line"></div><div class="line"><span class="section"># 增加一个新的远程仓库</span></div><div class="line">$ git remote add [<span class="string">shortname</span>][<span class="symbol">url</span>]</div><div class="line"></div><div class="line"><span class="section"># 取回远程仓库的变化，并与本地分支合并</span></div><div class="line">$git pull [<span class="string">remote</span>][<span class="symbol">branch</span>]</div><div class="line"></div><div class="line"><span class="section"># 上传本地指定分支到远程仓库</span></div><div class="line">$ git push [<span class="string">remote</span>][<span class="symbol">branch</span>]</div><div class="line"></div><div class="line"><span class="section"># 推送所有分支到远程仓库</span></div><div class="line">$ git push [remote] --all</div></pre></td></tr></table></figure>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 恢复暂存区的指定文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 恢复暂存区的所有文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置暂存区的指定文件，与上次commit保持一直，但工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset [file]</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,7 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/内存泄漏/" rel="tag"># 内存泄漏</a>
+            <a href="/tags/git命令/" rel="tag"># git命令</a>
           
         </div>
       
@@ -460,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/08/javascript-synchronization-asynchronism/" rel="next" title="javascript-同步与异步(Ajax，promise)">
-                <i class="fa fa-chevron-left"></i> javascript-同步与异步(Ajax，promise)
+              <a href="/2017/09/12/interviewQuestions/" rel="next" title="js前端面试笔记">
+                <i class="fa fa-chevron-left"></i> js前端面试笔记
               </a>
             
           </div>
@@ -469,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/09/javascript-cross-domain/" rel="prev" title="javascript-跨域">
-                javascript-跨域 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么叫内存泄漏"><span class="nav-number">1.</span> <span class="nav-text">什么叫内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哪些操作会造成内存泄漏？"><span class="nav-number">2.</span> <span class="nav-text">哪些操作会造成内存泄漏？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript垃圾回收方法"><span class="nav-number">3.</span> <span class="nav-text">javascript垃圾回收方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新建"><span class="nav-number">1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加"><span class="nav-number">3.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交"><span class="nav-number">5.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看信息"><span class="nav-number">7.</span> <span class="nav-text">查看信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程同步"><span class="nav-number">8.</span> <span class="nav-text">远程同步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#恢复"><span class="nav-number">9.</span> <span class="nav-text">恢复</span></a></li></ol></div>
             
 
           </div>

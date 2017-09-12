@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="乖乖小左">
 <meta property="og:description" content="8.31 阿里一轮电话面试1. js的基本数据类型  检测给定变量的数据类型可用typeof  （1）    Undefined： 只有一个值，就是undefined，在使用var声明变量但未对其加以初始化，这个变量就是undefined。  （2）    Null： 只有一个值，就是null。从逻辑角度来看，null值表示一个空对象指针，使用typeof操作符检测null值会返回object。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-12T03:28:49.491Z">
+<meta property="og:updated_time" content="2017-09-12T14:31:10.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js前端面试笔记">
 <meta name="twitter:description" content="8.31 阿里一轮电话面试1. js的基本数据类型  检测给定变量的数据类型可用typeof  （1）    Undefined： 只有一个值，就是undefined，在使用var声明变量但未对其加以初始化，这个变量就是undefined。  （2）    Null： 只有一个值，就是null。从逻辑角度来看，null值表示一个空对象指针，使用typeof操作符检测null值会返回object。">
@@ -425,7 +425,7 @@
 <p>为什么使用webpack：<br>  a)    模块化，把复杂的程序细小为小的文件<br>  b)    在javascript上拓展的开发语言，浏览器不能直接识别的。<br>  c)    Scss, less等css预处理器</p>
 <h2 id="10-HTML5"><a href="#10-HTML5" class="headerlink" title="10. HTML5"></a>10. HTML5</h2><h2 id="11-为什么使用vue"><a href="#11-为什么使用vue" class="headerlink" title="11. 为什么使用vue"></a>11. 为什么使用vue</h2><p>(1) vue的核心库只关注视图层，并且非常容易学习<br>(2) 单页应用程序(SPA)，一个页面就是应用。<br>(3) jquery是操作DOM来才做HTML的DOM结构，</p>
 <h2 id="12-vue的父子之间通信"><a href="#12-vue的父子之间通信" class="headerlink" title="12. vue的父子之间通信"></a>12. vue的父子之间通信</h2><p>在vue中，父子组件的关系可以总结为props down，events up。父组件通过props向下传递数据给子组件，子组件通过events给父组件发送信息。</p>
-<p>-events<br>每个Vue实例都实现了事件接口。<br>-使用$on(eventName)监听事件<br>-使用$emit(eventName)触发事件</p>
+<p>-events<br>每个Vue实例都实现了事件接口。<br>-使用$on(eventName)监听事件<br>-使用$emit(eventName)触发事件，子组件向父组件触发事件<br>$on和$emit可以实现非父子组件通信</p>
 <h2 id="12-你所了解的前端的东西有哪些"><a href="#12-你所了解的前端的东西有哪些" class="headerlink" title="12. 你所了解的前端的东西有哪些"></a>12. 你所了解的前端的东西有哪些</h2><p>基础：javascript, css, html，对应的版本ES6, CSS3, HTML5<br>前端框架：react, vue, angular，zepto<br>前端库： jquery, bootstrap, elementUI, amazeUI, echarts, canave<br>模板引擎： jade<br>前端模块管理： ES6, CommonJS, AMD<br>前端构建工具：webpack, grunt, gulp<br>版本控制： git, github, svn<br>交互： ajax, http, https,<br>后端： php, java(jsp), nodejs，服务端框架：express, koa, servlet<br>数据库： mysql, oracle, mongodb, redis</p>
 <h2 id="13-什么是闭包，闭包的优点与缺点"><a href="#13-什么是闭包，闭包的优点与缺点" class="headerlink" title="13. 什么是闭包，闭包的优点与缺点"></a>13. 什么是闭包，闭包的优点与缺点</h2><p>闭包是有权访问另一个函数作用域中的变量的函数。<br>在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包是定义在一个函数内部的函数。</p>
 <p>闭包的用处：<br>1）    可以读取函数内部的变量<br>2）让函数内部的变量的值保持在内存中。</p>
@@ -505,6 +505,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/09/12/git/" rel="prev" title="git常用命令">
+                git常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -576,7 +580,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -587,7 +591,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -598,7 +602,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
