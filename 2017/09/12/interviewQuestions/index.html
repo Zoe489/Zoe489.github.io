@@ -102,7 +102,7 @@
 <meta property="og:description" content="8.31 阿里一轮电话面试1. js的基本数据类型  检测给定变量的数据类型可用typeof  （1）    Undefined： 只有一个值，就是undefined，在使用var声明变量但未对其加以初始化，这个变量就是undefined。  （2）    Null： 只有一个值，就是null。从逻辑角度来看，null值表示一个空对象指针，使用typeof操作符检测null值会返回object。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.runoob.com/images/box-model.gif">
-<meta property="og:updated_time" content="2017-09-18T03:11:45.546Z">
+<meta property="og:updated_time" content="2017-09-18T03:27:27.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js前端面试笔记">
 <meta name="twitter:description" content="8.31 阿里一轮电话面试1. js的基本数据类型  检测给定变量的数据类型可用typeof  （1）    Undefined： 只有一个值，就是undefined，在使用var声明变量但未对其加以初始化，这个变量就是undefined。  （2）    Null： 只有一个值，就是null。从逻辑角度来看，null值表示一个空对象指针，使用typeof操作符检测null值会返回object。">
@@ -520,7 +520,8 @@
 <p><em>拓展：</em><br><code>call(this,arg1,arg2)</code>和<code>apply(this,[arg1,arg2])</code><br>这两个函数是为了动态改变this而出现的。当一个object没有某个方法，但其他的有，我们可以借用<code>call()</code>或<code>apply()</code>来操作。<br>明确知道参数数量时用<code>call()</code>；不确定参数数量时用<code>apply()</code>，把参数push进数组里去。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">obj.call(thisObj, arg1, arg2, ...);</div><div class="line">obj.apply(thisObj, [arg1, arg2, ...]);</div></pre></td></tr></table></figure></p>
 <p>两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。</p>
 <h2 id="9-字符串翻转"><a href="#9-字符串翻转" class="headerlink" title="9. 字符串翻转"></a>9. 字符串翻转</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'12345'</span>;</div><div class="line"><span class="built_in">Array</span>.prototype.map.call(str, <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;).reverse().join(<span class="string">''</span>);</div><div class="line"></div><div class="line"><span class="comment">// Output: '54321'</span></div></pre></td></tr></table></figure>
-<h2 id="10-如何判断单链表的环？优化？"><a href="#10-如何判断单链表的环？优化？" class="headerlink" title="10. 如何判断单链表的环？优化？"></a>10. 如何判断单链表的环？优化？</h2><h2 id="11-let和var的区别（变量提升）"><a href="#11-let和var的区别（变量提升）" class="headerlink" title="11. let和var的区别（变量提升）"></a>11. let和var的区别（变量提升）</h2><h2 id="12-快速排序算法思路，时间复杂度"><a href="#12-快速排序算法思路，时间复杂度" class="headerlink" title="12. 快速排序算法思路，时间复杂度"></a>12. 快速排序算法思路，时间复杂度</h2><h2 id="13-在学习过程中遇到什么问题，怎么解决的"><a href="#13-在学习过程中遇到什么问题，怎么解决的" class="headerlink" title="13. 在学习过程中遇到什么问题，怎么解决的"></a>13. 在学习过程中遇到什么问题，怎么解决的</h2>
+<h2 id="10-如何判断单链表的环？优化？"><a href="#10-如何判断单链表的环？优化？" class="headerlink" title="10. 如何判断单链表的环？优化？"></a>10. 如何判断单链表的环？优化？</h2><p>使用快慢指针，slow每次前进1步，fast前进两步，如果两者相遇，则存在环，如果不存在环，fast遇到NULL退出。</p>
+<h2 id="11-let和var的区别（变量提升）"><a href="#11-let和var的区别（变量提升）" class="headerlink" title="11. let和var的区别（变量提升）"></a>11. let和var的区别（变量提升）</h2><h2 id="12-快速排序算法思路，时间复杂度"><a href="#12-快速排序算法思路，时间复杂度" class="headerlink" title="12. 快速排序算法思路，时间复杂度"></a>12. 快速排序算法思路，时间复杂度</h2><h2 id="13-在学习过程中遇到什么问题，怎么解决的"><a href="#13-在学习过程中遇到什么问题，怎么解决的" class="headerlink" title="13. 在学习过程中遇到什么问题，怎么解决的"></a>13. 在学习过程中遇到什么问题，怎么解决的</h2>
       
     </div>
 
