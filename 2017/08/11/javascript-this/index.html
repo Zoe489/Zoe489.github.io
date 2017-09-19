@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="new," />
+  <meta name="keywords" content="this," />
 
 
 
@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="new操作符具体干了什么呢？12345678910//下面这段代码模拟了new操作符(实例化对象)的内部过程function person(name)&amp;#123;  var o=&amp;#123;&amp;#125;;// (1)  o.__proto__=Person.prototype;  //(2)原型继承  Person.call(o,name);// (3)  return o;// (4)&amp;#125">
-<meta name="keywords" content="new">
+<meta name="description" content="谁调用这样函数或方法，this关键字就指向谁。在JS中，函数调用的方式有  普通函数调用 作为方法来调用 作为构造函数调用 使用apply/call方法来调用 Function.prototype.bind()方法 es6箭头函数  普通函数调用 1234567function person()&amp;#123;   this.name=&quot;xl&quot;;   console.log(this);   cons">
+<meta name="keywords" content="this">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript-New关键字">
-<meta property="og:url" content="http://zoe489.github.io/2017/08/06/javascript-New/index.html">
+<meta property="og:title" content="javascript-this关键字">
+<meta property="og:url" content="http://zoe489.github.io/2017/08/11/javascript-this/index.html">
 <meta property="og:site_name" content="乖乖小左">
-<meta property="og:description" content="new操作符具体干了什么呢？12345678910//下面这段代码模拟了new操作符(实例化对象)的内部过程function person(name)&amp;#123;  var o=&amp;#123;&amp;#125;;// (1)  o.__proto__=Person.prototype;  //(2)原型继承  Person.call(o,name);// (3)  return o;// (4)&amp;#125">
+<meta property="og:description" content="谁调用这样函数或方法，this关键字就指向谁。在JS中，函数调用的方式有  普通函数调用 作为方法来调用 作为构造函数调用 使用apply/call方法来调用 Function.prototype.bind()方法 es6箭头函数  普通函数调用 1234567function person()&amp;#123;   this.name=&quot;xl&quot;;   console.log(this);   cons">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-18T03:12:21.679Z">
+<meta property="og:updated_time" content="2017-09-18T03:39:41.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript-New关键字">
-<meta name="twitter:description" content="new操作符具体干了什么呢？12345678910//下面这段代码模拟了new操作符(实例化对象)的内部过程function person(name)&amp;#123;  var o=&amp;#123;&amp;#125;;// (1)  o.__proto__=Person.prototype;  //(2)原型继承  Person.call(o,name);// (3)  return o;// (4)&amp;#125">
+<meta name="twitter:title" content="javascript-this关键字">
+<meta name="twitter:description" content="谁调用这样函数或方法，this关键字就指向谁。在JS中，函数调用的方式有  普通函数调用 作为方法来调用 作为构造函数调用 使用apply/call方法来调用 Function.prototype.bind()方法 es6箭头函数  普通函数调用 1234567function person()&amp;#123;   this.name=&quot;xl&quot;;   console.log(this);   cons">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://zoe489.github.io/2017/08/06/javascript-New/"/>
+  <link rel="canonical" href="http://zoe489.github.io/2017/08/11/javascript-this/"/>
 
 
 
 
 
-  <title>javascript-New关键字 | 乖乖小左</title>
+  <title>javascript-this关键字 | 乖乖小左</title>
   
 
 
@@ -304,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/06/javascript-New/">
+    <link itemprop="mainEntityOfPage" href="http://zoe489.github.io/2017/08/11/javascript-this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zoe">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javascript-New关键字</h1>
+          <h1 class="post-title" itemprop="name headline">javascript-this关键字</h1>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T12:23:40+08:00">
-                2017-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T21:00:40+08:00">
+                2017-08-11
               </time>
             
 
@@ -373,7 +373,7 @@
 
           
           
-             <span id="/2017/08/06/javascript-New/" class="leancloud_visitors" data-flag-title="javascript-New关键字">
+             <span id="/2017/08/11/javascript-this/" class="leancloud_visitors" data-flag-title="javascript-this关键字">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,8 +402,39 @@
       
 
       
-        <p>new操作符具体干了什么呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//下面这段代码模拟了new操作符(实例化对象)的内部过程</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> o=&#123;&#125;;<span class="comment">// (1)</span></div><div class="line">  o.__proto__=Person.prototype;  <span class="comment">//(2)原型继承</span></div><div class="line">  Person.call(o,name);<span class="comment">// (3)</span></div><div class="line">  <span class="keyword">return</span> o;<span class="comment">// (4)</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> personB=person(<span class="string">"xl"</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(personB.name);  <span class="comment">// 输出  xl</span></div></pre></td></tr></table></figure></p>
-<p>(1)新建一个空对象o；<br>(2)设置原型链，将o的__proto__指向Person.prototype,完成对Person的原型对象的属性和方法的继承；<br>(3)让Person中的this指向o；<br>(4)返回对象o。<br>此时调用person()函数就相当于new Person()。</p>
+        <p><strong>谁调用这样函数或方法，this关键字就指向谁。</strong><br>在JS中，函数调用的方式有</p>
+<ul>
+<li>普通函数调用</li>
+<li>作为方法来调用</li>
+<li>作为构造函数调用</li>
+<li>使用apply/call方法来调用</li>
+<li>Function.prototype.bind()方法</li>
+<li>es6箭头函数</li>
+</ul>
+<h1 id="普通函数调用"><a href="#普通函数调用" class="headerlink" title="普通函数调用"></a>普通函数调用</h1><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">this</span>.name=<span class="string">"xl"</span>;</div><div class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">person();  <span class="comment">//输出  window  xl</span></div></pre></td></tr></table></figure>
+<p>相当于person()作为全局变量window的一个方法来调用，相当于window.person()，所以this志向window.</p>
+<h1 id="作为方法来调用"><a href="#作为方法来调用" class="headerlink" title="作为方法来调用"></a>作为方法来调用</h1><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="string">"XL"</span>;</div><div class="line"><span class="keyword">var</span> person=&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">"xl"</span>,</div><div class="line">    <span class="attr">showName</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">person.showName();  <span class="comment">//输出  xl</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> showNameA=person.showName;</div><div class="line">showNameA();    <span class="comment">//输出  XL</span></div></pre></td></tr></table></figure>
+<p>1.这里是person对象调用showName方法，很显然this关键字是指向person对象的，所以会输出”Xl”.<br>2.这里将person.showName方法赋给showNameA变量，此时showNameA变量相当于window对象的一个属性，因此showNameA()执行的时候相当于window.showNameA(),即window对象调用showNameA这个方法，所以this关键字指向window.</p>
+<h1 id="作为构造函数来调用"><a href="#作为构造函数来调用" class="headerlink" title="作为构造函数来调用"></a>作为构造函数来调用</h1><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> personA=Person(<span class="string">"xl"</span>);</div><div class="line"><span class="built_in">console</span>.log(personA.name); <span class="comment">// 输出  undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.name);<span class="comment">//输出  xl</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> personB=<span class="keyword">new</span> Person(<span class="string">"xl"</span>);</div><div class="line"><span class="built_in">console</span>.log(personB.name);<span class="comment">// 输出 xl</span></div><div class="line"><span class="comment">//这部分代码的解释见下</span></div></pre></td></tr></table></figure>
+<p>1.上面代码没有进行new操作，相当于window对象调用Person(“xl”)方法，那么this指向window对象，并进行赋值操作window.name=”xl”.</p>
+<h2 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//下面这段代码模拟了new操作符(实例化对象)的内部过程</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> o=&#123;&#125;;</div><div class="line">  o.__proto__=Person.prototype;  <span class="comment">//原型继承</span></div><div class="line">  Person.call(o,name);</div><div class="line">  <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> personB=person(<span class="string">"xl"</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(personB.name);  <span class="comment">// 输出  xl</span></div></pre></td></tr></table></figure>
+<p>1.首先在person里创建空对象o，将o的__proto__指向Person.prototype,完成对Person的原型对象的属性和方法的继承；<br>2.Person.call(o,name)表示将Person对象中的this指向o，即o.name=name;<br>3.返回对象o。</p>
+<h1 id="call-apply方法的调用"><a href="#call-apply方法的调用" class="headerlink" title="call/apply方法的调用"></a>call/apply方法的调用</h1><hr>
+<p><strong>call/apply方法最大的作用就是改变this的指向。</strong><br>Obj.method.apply(AnotherObj,arguments);<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="string">"XL"</span>;</div><div class="line"><span class="keyword">var</span> Person=&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">"xl"</span>,</div><div class="line">    <span class="attr">showName</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Person.showName.call(); <span class="comment">//输出 "XL"</span></div><div class="line">Person.showName();<span class="comment">// 输出“Xl”</span></div></pre></td></tr></table></figure></p>
+<p>call()不带参数是指向window，若带参数，this指向第一个参数。</p>
+<h1 id="Function-prototype-bind-方法"><a href="#Function-prototype-bind-方法" class="headerlink" title="Function.prototype.bind()方法"></a>Function.prototype.bind()方法</h1><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="string">"XL"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">  <span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"my name is "</span>+<span class="keyword">this</span>.name);</div><div class="line">    &#125;,<span class="number">50</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person(<span class="string">"xl"</span>);</div><div class="line">person.sayName()  <span class="comment">//输出  “my name is XL”;</span></div></pre></td></tr></table></figure>
+<p>setTimeout()定时函数,相当于window.setTimeout(),由window这个全局对象对调用,因此this的指向为window, 则this.name则为XL<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="string">"XL"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.name=name;</div><div class="line">        <span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">"my name is "</span>+<span class="keyword">this</span>.name);</div><div class="line">            &#125;.bind(<span class="keyword">this</span>),<span class="number">50</span>)  <span class="comment">//注意这个地方使用的bind()方法，绑定setTimeout里面的匿名函数的this一直指向Person对象</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> person=<span class="keyword">new</span> Person(<span class="string">"xl"</span>);</div><div class="line">    person.sayName(); <span class="comment">//输出 “my name is xl”;</span></div></pre></td></tr></table></figure></p>
+<p>这里setTimeout(function(){console.log(this.name)}.bind(this),50);,匿名函数使用bind(this)方法后创建了新的函数，这个新的函数不管在什么地方执行，this都指向的Person,而非window,因此最后的输出为”my name is xl”而不是”my name is XL”</p>
+<p><em>setTimeout/setInterval/匿名函数执行的时候，this默认指向window对象，除非手动改变this的指向。<br>函数中的this的值，在非严格模式下是指向window对象，在严格模式下是指向undefined</em></p>
+<h1 id="Eval-函数"><a href="#Eval-函数" class="headerlink" title="Eval()函数"></a>Eval()函数</h1><hr>
+<p>该函数执行时，this绑定到当前作用域的对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name=<span class="string">"XL"</span>;</div><div class="line"><span class="keyword">var</span> person=&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">"xl"</span>,</div><div class="line">    <span class="attr">showName</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">eval</span>(<span class="string">"console.log(this.name)"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">person.showName();  <span class="comment">//输出  "xl"</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a=person.showName;</div><div class="line">a();  <span class="comment">//输出  "XL"</span></div></pre></td></tr></table></figure></p>
+<h1 id="es6箭头函数"><a href="#es6箭头函数" class="headerlink" title="es6箭头函数"></a>es6箭头函数</h1><hr>
+<p><em>箭头函数的 this 始终指向函数定义时的 this，而非执行时。</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">x</span> : <span class="number">1</span>,</div><div class="line">    <span class="attr">func</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.x) &#125;,</div><div class="line">    <span class="attr">test</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="keyword">this</span>.func() &#125;, <span class="number">100</span>);</div><div class="line">        <span class="comment">// this指向o</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">o.test();<span class="comment">// 1</span></div></pre></td></tr></table></figure></p>
+<p>借鉴了[<a href="https://segmentfault.com/a/1190000003046071" target="_blank" rel="external">https://segmentfault.com/a/1190000003046071</a>]</p>
 
       
     </div>
@@ -433,7 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/new/" rel="tag"># new</a>
+            <a href="/tags/this/" rel="tag"># this</a>
           
         </div>
       
@@ -446,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/06/javascript-This/" rel="next" title="javascript-This关键字">
-                <i class="fa fa-chevron-left"></i> javascript-This关键字
+              <a href="/2017/08/11/javascript-HTTP-HTTPS/" rel="next" title="javascript-HTTP与HTTPS">
+                <i class="fa fa-chevron-left"></i> javascript-HTTP与HTTPS
               </a>
             
           </div>
@@ -456,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/06/javascript-Array-String/" rel="prev" title="javascript-数组-字符串方法">
-                javascript-数组-字符串方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/12/javascript-closure/" rel="prev" title="javascript-闭包">
+                javascript-闭包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -580,6 +620,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#普通函数调用"><span class="nav-number">1.</span> <span class="nav-text">普通函数调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作为方法来调用"><span class="nav-number">2.</span> <span class="nav-text">作为方法来调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作为构造函数来调用"><span class="nav-number">3.</span> <span class="nav-text">作为构造函数来调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new操作符"><span class="nav-number">3.1.</span> <span class="nav-text">new操作符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#call-apply方法的调用"><span class="nav-number">4.</span> <span class="nav-text">call/apply方法的调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function-prototype-bind-方法"><span class="nav-number">5.</span> <span class="nav-text">Function.prototype.bind()方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eval-函数"><span class="nav-number">6.</span> <span class="nav-text">Eval()函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#es6箭头函数"><span class="nav-number">7.</span> <span class="nav-text">es6箭头函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
